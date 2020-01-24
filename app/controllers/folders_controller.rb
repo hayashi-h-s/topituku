@@ -8,6 +8,16 @@ class FoldersController < ApplicationController
     @folder = Folder.new
   end
 
+  def show
+    @folder = Folder.find(params[:id])
+    @posts = @folder.posts.all
+    @random = @folder.posts.order("RAND()").limit(1)
+  end
+
+  def game
+
+  end  
+
   def create
     @folder = Folder.new(folder_params)
     @folder.save
@@ -21,12 +31,6 @@ class FoldersController < ApplicationController
   end
 
   def edit
-  end
-
-  def show
-    @folder = Folder.find(params[:id])
-    @posts = @folder.posts.all
-    @random = @folder.posts.order("RAND()").limit(1)
   end
 
   private
