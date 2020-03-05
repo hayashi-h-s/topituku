@@ -3,12 +3,17 @@
 <% @folders.each do |folder| %>
   <div class="card mx-auto" style="width: 90%;">
     <div class="card-body">
+      <h1><%= folder.user.id %></h1>
+      <span class="card-title">ユーザー名:<%= link_to folder.user.name,user_path(folder.user) %></span>
+      <hr>
       <span class="card-title"><%= folder.title %></span>
       <div class="float-right">
         <%= link_to "",folder_path(folder),class: "fas fa-gamepad fa-border fa-2x" %>
         <%= link_to "",folder_posts_path(folder),class: "fas fa-folder-open fa-border fa-2x" %>        
-        <%= link_to "",new_folder_post_path(folder),class: "fas fa-plus fa-border fa-2x" %>
-        <%#="後で追加する" link_to "フォルダ削除",folder,method: :delete,class: "btn btn-danger" %>
+        <% if folder.user == current_user %>
+          <%= link_to "",new_folder_post_path(folder),class: "fas fa-plus fa-border fa-2x" %>
+          <%= link_to "", folder_path(folder), method: :delete,class:"fas fa-trash-alt fa-border fa-2x"  %>   
+        <% end %>
       </div>
     </div>
   </div>

@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
-  # validates_associated :folders, presence: true
   belongs_to :folder
+  # belongs_to :user
+
+  validates :content, presence: true
 end

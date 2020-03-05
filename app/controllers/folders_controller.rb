@@ -1,23 +1,33 @@
 class FoldersController < ApplicationController
+  before_action :logged_in_user ,only: [:new, :create, :destroy]
+  before_action :correct_user, only: [:edit]
+  # before_action :user_signed_in?, only: [:new, :create, :destroy]
+  # before_action :correct_user,   only: [:edit, :update]
 
   def index
-    @folders = Folder.all
+    @folders = Folder.all.order(created_at: :desc)
   end
 
   def new
+    # @user = User.find(params[:user_id])
     @folder = Folder.new
   end
 
   def create
-    @folder = Folder.new(folder_params)
-    @folder.save
-    redirect_to new_folder_post_path(@folder), notice: "「#{@folder.title}」を投稿しました"
+    @folder = current_user.folders.build(folder_params)
+    if @folder.save
+      flash[:success] = "「#{@folder.title}」を投稿しました"
+      redirect_to new_folder_post_path(@folder)
+    else
+      render 'new'
+    end
   end
 
   def destroy
     @folder = Folder.find(params[:id])
     @folder.destroy
-    redirect_to folders_path, notice: "フォルダを削除しました"
+    flash[:info] = "「#{@folder.title}」を削除しました。"
+    redirect_to user_path(current_user)
   end
 
   def edit
@@ -28,7 +38,7 @@ class FoldersController < ApplicationController
     @posts = @folder.posts.all
     @posts_count = @posts.size
     @random = @folder.posts.order("RAND()").limit(1)
-  end
+  end  
 
   private
 
