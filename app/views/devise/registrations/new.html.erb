@@ -1,18 +1,18 @@
 
 
-<div class="jumbotron">
+<div class="jumbotron text-center">
   <h1 class="display-4">アカウントを作成</h1>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
       <%= f.label :名前 %><br />
-      <%= f.text_field :name, autofocus: true,class: "form-control w-75" %>
+      <%= f.text_field :name, autofocus: true,class: "form-label-group w-50" %>
     </div>
 
     <div class="field">
       <%= f.label :メールアドレス %><br />
-      <%= f.email_field :email, autocomplete: "email",class: "form-control w-75" %>
+      <%= f.email_field :email, autocomplete: "email",class: "form-label-group w-50" %>
     </div>
 
     <div class="field">
@@ -20,36 +20,13 @@
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password",class: "form-control w-75" %>
+      <%= f.password_field :password, autocomplete: "new-password",class: "form-label-group w-50" %>
     </div>
 
     <div class="field">
       <%= f.label :パスワード（確認）%><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-control w-75" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-label-group w-50" %>
     </div>
     <%= f.submit "登録",class: "btn btn-primary submit-btn" %>
   <% end %>
 </div>
-
-<% 
-=begin
-%>
-
-コメントアウトしてる場所
-
-<div class="jumbotron">
-  <h1 class="display-4">ユーザー新規登録</h1>
-    <%= form_with model:@user,local:true,class: "form-inline" do |f| %>
-      <%= render "shared/error_messages" %>
-      <%= f.text_field :name,placeholder: "名前を入力",class: "form-control w-75" %>
-      <%= f.text_field :email,placeholder: "emailを入力",class: "form-control w-75" %>
-      <%= f.text_field :password,placeholder: "passwordを入力",class: "form-control w-75" %>
-      <%= f.text_field :password_confirmation,placeholder: "password(確認)を入力",class: "form-control w-75" %>
-      <%= f.submit "登録",class: "btn btn-primary submit-btn" %>
-    <% end %>
-</div>
-
-
-<%
-=end
-%>

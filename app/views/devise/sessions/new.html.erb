@@ -1,14 +1,15 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="jumbotron text-center">
+<h1 class="display-4">ランとぴ。にログイン</h1>
+<%= form_for(resource, as: resource_name,class: "inline-block",url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-label-group w-50" %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password",class: "form-label-group w-50" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -17,10 +18,31 @@
       <%= f.label :remember_me %>
     </div>
   <% end %>
+  <%= f.submit "登録",class: "btn btn-primary submit-btn w-50" %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
 <% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+
+<% 
+=begin
+%>
+
+コメントアウトしてる場所
+
+<div class="jumbotron">
+  <h1 class="display-4">ユーザー新規登録</h1>
+    <%= form_with model:@user,local:true,class: "form-inline" do |f| %>
+      <%= render "shared/error_messages" %>
+      <%= f.text_field :name,placeholder: "名前を入力",class: "form-control w-75" %>
+      <%= f.text_field :email,placeholder: "emailを入力",class: "form-control w-75" %>
+      <%= f.text_field :password,placeholder: "passwordを入力",class: "form-control w-75" %>
+      <%= f.text_field :password_confirmation,placeholder: "password(確認)を入力",class: "form-control w-75" %>
+      <%= f.submit "登録",class: "btn btn-primary submit-btn" %>
+    <% end %>
+</div>
+
+
+<%
+=end
+%>
