@@ -7,12 +7,12 @@
 
     <div class="field">
       <%= f.label :名前 %><br />
-      <%= f.text_field :name, autofocus: true,class: "form-label-group w-50" %>
+      <%= f.text_field :name, autofocus: true,class: "form-label-group form" %>
     </div>
 
     <div class="field">
       <%= f.label :メールアドレス %><br />
-      <%= f.email_field :email, autocomplete: "email",class: "form-label-group w-50" %>
+      <%= f.email_field :email, autocomplete: "email",class: "form-label-group form" %>
     </div>
 
     <div class="field">
@@ -20,13 +20,13 @@
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password",class: "form-label-group w-50" %>
+      <%= f.password_field :password, autocomplete: "new-password",class: "form-label-group form" %>
     </div>
 
     <div class="field mb-3">
       <%= f.label :パスワード（確認）%><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-label-group w-50" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-label-group form" %>
     </div>
-    <%= f.submit "登録",class: "btn btn-primary submit-btn w-50" %>
+    <%= f.submit "登録",class: "btn btn-primary submit-btn form" %>
   <% end %>
 </div>

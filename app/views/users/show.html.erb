@@ -3,17 +3,27 @@
 =begin
 %>
 
+<div class="jumbotron">
+  <h2 class="folder-title" ></h2>
+  <h1 class="display-4 ">フォルダにトピックを投稿しよう！</h1>
+  <p  class="lead">ランダムに表示したいトピックを投稿する。</p>
+    <%= form_with model:[@folder, @folder.posts.build],local:true,class: "form-inline" do |f| %>
+      <%= f.text_field:content,placeholder: "トピックを入力",class: "form-control w-75", autofocus: true %>
+      <%= f.submit "投稿",class: "btn btn-primary submit-btn" %>
+    <% end %>
+    <div class="text-center">
+    <%= link_to "ゲーム開始",folder_path(@folder), class:"btn btn-info btn-lg game-btn" %>
+    </div>
+</div>
+
 <%
 =end
 %>
 
-<%#= link_to "",edit_user_path(@user),class:"fas fa-user-edit fa-border fa-3x" %>    
-
-<hr>
-ユーザー名：<%= @user.name %> 
-<hr>
-フォルダ
-<hr>
+<div class="text-center">
+  <div class="user-name-show mb-3"><%= @user.name %> </div>
+  <p>Myフォルダ一覧</p>
+</div>
 
 <% @folders.each do |folder| %>
   <div class="card mx-auto" style="width: 90%;">
