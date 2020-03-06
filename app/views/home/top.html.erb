@@ -4,13 +4,13 @@
   <p>ランダムに表示されるトピック(話題)を自分で投稿できるアプリです。</p>
   <p>男女で盛り上げる話題、罰ゲーム、深い話などテーマに合ったトピックを作って遊んでみよう！</p>
   <div class="btn-wrapper">
-    <a href="#" class="btn btn-success">遊び方</a>
+    <%= link_to "遊び方",root_path,class:"btn btn-success w-25" %>
     <p></p>
-    <a href="#" class="btn btn-info">さっそく遊ぶ！</a>
+    <%= link_to "さっそく遊ぶ",root_path,class:"btn btn-info w-25" %>
   　<p></p>
-    <a href="#" class="btn btn-primary">新規登録</a>
+    <%= link_to "アカウント登録",root_path,class:"btn btn-primary w-25" %>
     <p></p>
-    <a href="#" class="btn btn-warning">ログイン</a>
+    <%= link_to "ログイン",root_path,class:"btn btn-warning w-25" %>    
   </div>
 </div>
     <div class="how-to-wrapper">
