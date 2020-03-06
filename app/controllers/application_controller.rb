@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name])
     end
 
   private
@@ -24,7 +25,13 @@ class ApplicationController < ActionController::Base
     # end
 
     def correct_user
-      @folder = Folder.find(params[:folder_id])
+      # @folder = Folder.find(params[:folder_id]) || Folder.find(params[:id])
+      if  (params[:folder_id])
+        @folder = Folder.find(params[:folder_id])
+      else
+        @folder = Folder.find(params[:id])
+      end
+      # @folder = Folder.find(params[:id])
       unless current_user == @folder.user
         flash[:danger] = "ユーザー本人のみが、行える操作です。"      
         redirect_to folders_path

@@ -17,6 +17,19 @@
 =end
 %>
 
+<div class="mx-auto text-center">
+  <%= form_with model:[@folder, @folder.posts.build],local:true,class: "form-inline" do |f| %>
+    <%= f.text_field:content,placeholder: "トピックを入力",class: "form-control w-75", autofocus: true %>
+    <%= f.submit "投稿",class: "btn btn-primary submit-btn" %>
+  <% end %>
+</div>
+
+<div class="text-center">
+  <div class="user-name-show"><%#= @user.name %> </div>
+  <%#= link_to "", edit_user_registration_path(@user),class:"fas fa-user-edit fa-border fa-2x mb-3" %>
+  <p class="lead">トピック一覧</p>
+</div>
+
 <% @posts.each do |post| %>
   <div class="card mx-auto" style="width: 90%;">
     <div class="card-body">
@@ -28,6 +41,4 @@
     </div>
   </div>
 <% end %>
-
-        <%#= link_to "", folder_path(folder), method: :delete,class:"fas fa-trash-alt fa-border fa-2x"  %>   
 

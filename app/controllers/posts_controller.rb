@@ -25,7 +25,6 @@ class PostsController < ApplicationController
       render "new"
     end
   end
-
   
   def destroy
     @folder = Folder.find(params[:folder_id])

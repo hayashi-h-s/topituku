@@ -31,7 +31,18 @@ class FoldersController < ApplicationController
   end
 
   def edit
+    @folder = Folder.find(params[:id]) 
   end
+
+  def update
+    @folder = Folder.find(params[:id])
+    if @folder.save
+      flash[:success] = "フォルダ名を「#{@folder.title}」に変更しました"
+      redirect_to user_path(current_user)
+    else
+      render 'edit'
+    end
+  end  
 
   def show
     @folder = Folder.find(params[:id])
