@@ -9,6 +9,7 @@
       <%= link_to "", new_folder_path,class: "fas fa-folder-plus fa-border fa-3x" %>
       <%= link_to "", destroy_user_session_path, method: :delete,class:"fas fa-sign-out-alt fa-border fa-3x"  %>
     <% else %>
+      <%= link_to "", new_folder_path,class: "fas fa-folder-plus fa-border fa-3x" %>    
       <%= link_to "", destroy_user_session_path, method: :delete,class:"fas fa-sign-out-alt fa-border fa-3x"  %>    
       <%= link_to "", new_user_registration_path,class:"fas fa-user-plus fa-border fa-3x" %>
       <%= link_to "", new_user_session_path,class:"fas fa-sign-in-alt fa-border fa-3x" %>
