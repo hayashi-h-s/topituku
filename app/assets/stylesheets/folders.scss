@@ -9,16 +9,19 @@
   font-family:'Century Gothic';
 }
 
+
 // index
 .user-name{
   font-family:'Microsoft Sans Serif';
-  font-size:25px;
-  // color:rgb(75, 70, 70);
+  font-size:20px;
 }
+.user-name a{ 
+  color:rgb(89, 84, 84);  
+  }  
 
 .folder-title{
-  font-family:'Microsoft Sans Serif';
-  font-size:35px;
+  font-family:'MV Boil';
+  font-size:37px;
 }
 
 .w-90{
