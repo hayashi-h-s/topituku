@@ -19,7 +19,6 @@ default: &default
   ncoding: utf8
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  database: <%= ENV['DATABASE_DEV_NAME'] %>
   pool: 5
   username: <%= ENV['DATABASE_DEV_USER'] %>
   password: <%= ENV['DATABASE_DEV_PASSWORD'] %>
@@ -83,5 +82,11 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
   database: random_talking_production
+  pool: 5
+  username: root
+  password: Max9173627
+  host: localhost
