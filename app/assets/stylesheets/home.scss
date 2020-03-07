@@ -1,5 +1,9 @@
 // top
 
+.top-page{
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
 .how-to-wrapper{
   display:inline-block;
   background-color: #f7f7f7;
@@ -10,4 +14,19 @@
 .how-to{
   float:left;
   width:25%;
+}
+
+.text-contents {
+  width: 80%;
+  display: inline-block;
+  font-size: 13px;
+  color: #534c55;
+}
+
+
+
+// guidance-wrapper
+
+.guidance-wrapper{
+  background-color:white;
 }
