@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :folders do
     resources :posts
   end 
-  # resources :posts
+  # resources :postsoin
 
   # # resources :user
   

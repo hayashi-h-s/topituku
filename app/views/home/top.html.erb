@@ -6,11 +6,11 @@
     <div class="btn-wrapper">
       <%= link_to "遊び方",root_path,class:"btn btn-success w-25" %>
       <p></p>
-      <%= link_to "さっそく遊ぶ",root_path,class:"btn btn-info w-25" %>
+      <%= link_to "さっそく遊ぶ",folders_path,class:"btn btn-info w-25" %>
     　<p></p>
       <%= link_to "アカウント登録",root_path,class:"btn btn-primary w-25" %>
       <p></p>
-      <%= link_to "ログイン",root_path,class:"btn btn-warning w-25" %>    
+      <%= link_to "ログイン",root_path,class:"btn btn-warning w-25" %>
     </div>
   </div>
   <div class="how-to-wrapper text-center">
@@ -60,6 +60,8 @@
       <h2></h2>
       <h3 class="pt-5">さっそく遊んでみよう！</h3>
     </div>
-    <span class="btn btn-primary mt-3 mb-5">みんなが作ったフォルダ一覧へ</span>
-  </div>  
-</div>    
+    <%= link_to "みんなが作ったフォルダ一覧へ",folders_path,class:"btn btn-primary mt-3 mb-5 "%>
+    <p>アカウントを作ると自分でフォルダを作れます。</p>
+    <%= link_to "アカウント作成へ",new_user_registration_path,class:"btn btn-primary mt-3 mb-5 "%>
+  </div>
+</div>
