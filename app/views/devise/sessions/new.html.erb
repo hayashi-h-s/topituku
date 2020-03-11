@@ -23,26 +23,9 @@
   <% end %>
 </div>
 
+  <%= form_for(resource, as: resource_name,class: "inline-block",url: session_path(resource_name)) do |f| %>
+    <%= f.hidden_field :email, value: 'max9173627@gmail.com' %>
+    <%= f.hidden_field :password, value: 'hayahaya' %>
+    <%= f.submit 'テストログイン', class: 'btn btn-default' %>
+  <% end %>
 
-<% 
-=begin
-%>
-
-コメントアウトしてる場所
-
-<div class="jumbotron">
-  <h1 class="display-4">ユーザー新規登録</h1>
-    <%= form_with model:@user,local:true,class: "form-inline" do |f| %>
-      <%= render "shared/error_messages" %>
-      <%= f.text_field :name,placeholder: "名前を入力",class: "form-control w-75" %>
-      <%= f.text_field :email,placeholder: "emailを入力",class: "form-control w-75" %>
-      <%= f.text_field :password,placeholder: "passwordを入力",class: "form-control w-75" %>
-      <%= f.text_field :password_confirmation,placeholder: "password(確認)を入力",class: "form-control w-75" %>
-      <%= f.submit "登録",class: "btn btn-primary submit-btn" %>
-    <% end %>
-</div>
-
-
-<%
-=end
-%>
