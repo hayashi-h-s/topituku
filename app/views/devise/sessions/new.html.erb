@@ -21,11 +21,13 @@
     <%= f.submit "登録",class: "btn btn-primary submit-btn form" %>
 
   <% end %>
-</div>
 
-  <%= form_for(resource, as: resource_name,class: "inline-block",url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name,url: session_path(resource_name)) do |f| %>
     <%= f.hidden_field :email, value: 'max9173627@gmail.com' %>
     <%= f.hidden_field :password, value: 'hayahaya' %>
-    <%= f.submit 'テストログイン', class: 'btn btn-default' %>
-  <% end %>
+    <%= f.submit 'テストユーザーでログイン', class: 'btn btn-info mt-3 form' %>
+  <% end %>  
+</div>
+
+
 

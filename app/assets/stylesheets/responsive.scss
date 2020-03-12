@@ -1,3 +1,13 @@
+// タブレット向けレイアウト
+@media all and (max-width: 1000px) {
+  .how-to {
+    width: 50%;
+  }  
+}
+
+// スマホ向けレイアウト
 @media screen and (max-width: 600px) {
-  
+  .how-to {
+    width: 100%;
+  }
 }

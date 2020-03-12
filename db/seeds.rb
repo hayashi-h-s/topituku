@@ -34,10 +34,10 @@
     #   @folder.posts.create(content: elem
 #     # end
 
-@user1 = User.create!(name:  "Haya",
-                     email: "max9173627@gmail.com",
-                     password:              "hayahaya",
-                     password_confirmation: "hayahaya",
+@user1 = User.create!(name:  "test",
+                     email: "test@test.com",
+                     password:              "password",
+                     password_confirmation: "password",
                      )
 
 @folder1 = @user1.folders.create!(title: "トークテーマ集")

@@ -16,6 +16,10 @@
 
  @import "bootstrap";
 
+
+
+// 共通レイアウト
+
  body {
   background-color:#DDFFFF;
 }
@@ -36,6 +40,8 @@ a{
 a:hover {
 text-decoration: none;
 }
+
+
 
 
 li{
@@ -74,11 +80,4 @@ li{
   background-color:white;
 }
 
-// top
 
-.top-wrapper {
-  color:white;
-  background-image: url(/top_page.jpg);
-  background-size: cover;
-  padding:100px 0;
-}
