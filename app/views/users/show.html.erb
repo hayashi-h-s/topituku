@@ -1,46 +1,9 @@
-
-<% 
-=begin
-%>
-
-<div class="jumbotron">
-  <h2 class="folder-title" ></h2>
-  <h1 class="display-4 ">フォルダにトピックを投稿しよう！</h1>
-  <p  class="lead">ランダムに表示したいトピックを投稿する。</p>
-    <%= form_with model:[@folder, @folder.posts.build],local:true,class: "form-inline" do |f| %>
-      <%= f.text_field:content,placeholder: "トピックを入力",class: "form-control w-75", autofocus: true %>
-      <%= f.submit "投稿",class: "btn btn-primary submit-btn" %>
-    <% end %>
-    <div class="text-center">
-    <%= link_to "ゲーム開始",folder_path(@folder), class:"btn btn-info btn-lg game-btn" %>
-    </div>
-</div>
-
-<% @folders.each do |folder| %>
-  <div class="card mx-auto" style="width: 90%;">
-    <div class="card-body">
-      <span class="user-name"><%= link_to folder.user.name,user_path(folder.user) %></span>
-      <p>
-      <span class="folder-title"><%= folder.title %></span>
-      <span class="float-right">
-        <%= link_to "",folder_path(folder),class: "fas fa-gamepad fa-border fa-2x" %>
-        <%= link_to "",folder_posts_path(folder),class: "fas fa-folder-open fa-border fa-2x" %>        
-        <% if folder.user == current_user %>
-          <%= link_to "",new_folder_post_path(folder),class: "fas fa-plus fa-border fa-2x" %>
-          <%= link_to "", folder_path(folder), method: :delete,class:"fas fa-trash-alt fa-border fa-2x"  %>   
-        <% end %>
-      </span>
-    </div>
-  </div>
-<% end %>
-
-<%
-=end
-%>
-
 <div class="text-center">
   <div class="user-name-show"><%= @user.name %> </div>
-  <%= link_to "", edit_user_registration_path(@user),class:"fas fa-user-edit fa-border fa-2x mb-3" %>
+  <% if @user == current_user %>
+    <%= link_to "", edit_user_registration_path(@user),class:"fas fa-user-edit fa-border fa-2x mb-3" %>
+  <% end %>
+
   <p class="lead">Myフォルダ一覧</p>
 </div>
 
