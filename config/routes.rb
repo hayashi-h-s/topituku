@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   # get 'sessions/new'
   # get 'users/new'
   # resources :folders
+  get    'game/:id'  => 'folders#game'
+
   resources :folders do
     resources :posts
   end 
@@ -17,7 +19,6 @@ Rails.application.routes.draw do
 
   # # resources :user
   
-  # get    'login'   => 'sessions#new'
   # post   'login'   => 'sessions#create'
   # delete 'logout'  => 'sessions#destroy'
 

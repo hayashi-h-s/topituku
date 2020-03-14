@@ -6,12 +6,14 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :名前 %><br />
+    <%= f.label :名前 %>
+    <p>
     <%= f.text_field :name, autofocus: true,class: "form-label-group form"  %>
   </div>
 
   <div class="field">
-    <%= f.label :メールアドレス %><br />
+    <%= f.label :メールアドレス %>
+    <p>
     <%= f.email_field :email,autocomplete: "email",class: "form-label-group form" %>
   </div>
 
@@ -20,21 +22,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :パスワード %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password",class: "form-label-group form"  %>
+    <%= f.label :パスワード（変更しない場合は空白）%>
+    <p>
+    <%= f.password_field :password, autocomplete: "new-password",class: "form-label-group form",placeholder: "#{@minimum_password_length}文字以上で入力してください"  %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
 
   <div class="field">
-    <%= f.label :パスワード（確認） %><br />
+    <%= f.label :パスワード（確認 %>
+    <p>
     <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-label-group form"  %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :現在のパスワード（変更するには現在のパスワードが必要） %>
+    <p>
     <%= f.password_field :current_password, autocomplete: "current-password",class: "form-label-group form"  %>
   </div>
 

@@ -44,6 +44,10 @@ class FoldersController < ApplicationController
     end
   end  
 
+  def game
+    @folder = Folder.find(params[:id])
+  end
+
   def show
     @folder = Folder.find(params[:id])
     @posts = @folder.posts.all
