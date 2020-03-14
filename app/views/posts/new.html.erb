@@ -17,6 +17,6 @@
       <%= f.submit "投稿",class: "btn btn-primary submit-btn" %>
     <% end %>
     <div class="text-center">
-    <%= link_to "ゲーム開始",folder_path(@folder), class:"btn btn-info btn-lg game-btn" %>
+    <%= link_to "ゲーム開始","/game/#{@folder.id}", class:"btn btn-info btn-lg game-btn" %>
     </div>
 </div>
