@@ -16,7 +16,7 @@ class FoldersController < ApplicationController
   def create
     @folder = current_user.folders.build(folder_params)
     if @folder.save
-      flash[:success] = "「#{@folder.title}」を投稿しました"
+      flash[:notice] = "「#{@folder.title}」を投稿しました"
       redirect_to new_folder_post_path(@folder)
     else
       render 'new'
@@ -26,7 +26,7 @@ class FoldersController < ApplicationController
   def destroy
     @folder = Folder.find(params[:id])
     @folder.destroy
-    flash[:info] = "「#{@folder.title}」を削除しました。"
+    flash[:notice] = "「#{@folder.title}」を削除しました。"
     redirect_to user_path(current_user)
   end
 
@@ -37,7 +37,7 @@ class FoldersController < ApplicationController
   def update
     @folder = Folder.find(params[:id])
     if @folder.save
-      flash[:success] = "フォルダ名を「#{@folder.title}」に変更しました"
+      flash[:notice] = "フォルダ名を「#{@folder.title}」に変更しました"
       redirect_to user_path(current_user)
     else
       render 'edit'
