@@ -88,3 +88,25 @@ posts1 = [
 posts1.each do |elem|
   @folder1.posts.create(content: elem)
 end
+
+
+
+
+@folder2 = @user1.folders.create!(title: "トークテーマ集2")
+
+posts2 = [
+  "すべらない話",
+  "最近笑えた話",
+  "今から５分間英語で話す。",
+  "最近はらがたったこと",
+  "オススメの漫画",
+  "オススメの映画",
+  "最近見た映画の話",
+  "１億円あったらやりたいことは？",
+  "最近ハマっていることは？",
+  "最近よかったこと"
+]
+
+posts2.each do |elem|
+  @folder2.posts.create(content: elem)
+end
