@@ -16,9 +16,6 @@
 
  @import "bootstrap";
 
-.www{
-  width:75%;
-}
 
 // 共通レイアウト
 
@@ -52,10 +49,13 @@ text-decoration: none;
 }
 
 
-
-
 li{
   list-style:none;
+}
+
+
+.loat-right{
+  float: right;
 }
 
 .submit-btn{

@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :folders do
+  factory :folder do
     title { 'folderのtitle' }
-    user
+    association :user
   end
 end
