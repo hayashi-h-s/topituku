@@ -16,8 +16,6 @@
 
  @import "bootstrap";
 
-
-
 // 共通レイアウト
 
  body {
@@ -50,10 +48,13 @@ text-decoration: none;
 }
 
 
-
-
 li{
   list-style:none;
+}
+
+
+.loat-right{
+  float: right;
 }
 
 .submit-btn{
