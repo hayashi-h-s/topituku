@@ -58,4 +58,11 @@ RSpec.feature 'フォルダが表示機能' do
     expect(page).to have_content 'ログインしました'
     expect(page).to have_content 'フォルダ'
   end
+
+  it 'titleが存在しない投稿を許可しない' do
+    @folder.title = nil
+    @folder.valid?
+    # expect(micropost.errors).to be_added(:title, :blank)
+  end
+
 end
