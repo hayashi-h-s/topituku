@@ -4,8 +4,9 @@ RSpec.feature 'フォルダが表示機能' do
 
   background do
     # ユーザを作成する
-    @user = User.create!(email: 'foo@example.com', password: '123456')
-    @user.folders.create!(title: 'フォルダ')
+    # @user = User.create!(email: 'foo@example.com', password: '123456')
+    # @user.folders.create!(title: 'フォルダ')
+    let(:folder) { create(:folder) }
   end
 
   scenario '@userが作成したフォルダが表示される' do

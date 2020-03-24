@@ -27,11 +27,11 @@ RSpec.describe User, type: :model do
     expect(@user.errors).to be_added(:email, :blank)
   end  
 
-  # it 'nameが空では登録できないこと' do
-  #   user = build(:user, name: nil)
-  #   user.valid?
-  #   expect(user.errors[:name]).to include('が入力されていません。')
-  # end    
+  it 'passwordが存在しないユーザーを許可しない' do
+    @user.password = @user.password_confirmation = ' ' * 6
+    @user.valid?
+    expect(@user.errors).to be_added(:password, :blank)
+  end
 
   it 'emailが空では登録できないこと' do
     user = build(:user, email: nil)
