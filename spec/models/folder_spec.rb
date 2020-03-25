@@ -34,7 +34,7 @@ RSpec.feature 'フォルダが表示機能' do
   it 'titleが存在しない投稿を許可しない' do
     @folder.title = nil
     @folder.valid?
-    # expect(page).to have_content '' 
+    # expect(page).to have_content 'フォルダ名を入力してください' 
   end  
 
 end
