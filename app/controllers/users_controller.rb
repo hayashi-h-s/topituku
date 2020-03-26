@@ -11,17 +11,6 @@ class UsersController < ApplicationController
     @folders = @user.folders.all
   end
 
-  def create
-    @user = User.new(user_params)
-    
-    if @user.save
-      log_in @user
-      redirect_to @user
-      flash[:success] = "「#{@user.name}」でユーザー登録しました"
-    else
-      render "new"
-    end
-  end
 
   def edit  
     @user = User.find(params[:id])
@@ -40,9 +29,9 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password,:password_confirmation)
-    end
+    # def user_params
+    #   params.require(:user).permit(:name, :email, :avatar, :password,:password_confirmation)
+    # end
 
     # def user_edit_params
     #   params.require(:user).permit(:name, :email)
