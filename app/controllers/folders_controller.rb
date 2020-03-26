@@ -5,7 +5,8 @@ class FoldersController < ApplicationController
   # before_action :correct_user,   only: [:edit, :update]
 
   def index
-    @folders = Folder.all.order(created_at: :desc)
+    # @folders = Folder.all.order(created_at: :desc)
+    @folders = Folder.all.page(params[:page]).per(2)
   end
 
   def new
