@@ -41,6 +41,14 @@
                      )
 
 @folder1 = @user1.folders.create!(title: "トークテーマ集")
+@folder1 = @user1.folders.create!(title: "トークテーマ集")
+@folder1 = @user1.folders.create!(title: "トークテーマ集")
+@folder1 = @user1.folders.create!(title: "トークテーマ集")
+@folder1 = @user1.folders.create!(title: "トークテーマ集")
+@folder1 = @user1.folders.create!(title: "トークテーマ集")
+@folder1 = @user1.folders.create!(title: "トークテーマ集")
+@folder1 = @user1.folders.create!(title: "トークテーマ集")
+@folder1 = @user1.folders.create!(title: "トークテーマ集")
 
 posts1 = [
   "有名人で誰が好き？",
