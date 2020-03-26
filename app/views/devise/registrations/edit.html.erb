@@ -31,7 +31,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :パスワード（確認 %>
+    <%= f.label :パスワード（確認）%>
     <p>
     <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-label-group form"  %>
   </div>
@@ -42,10 +42,24 @@
     <%= f.password_field :current_password, autocomplete: "current-password",class: "form-label-group form"  %>
   </div>
 
-  <div class="actions mt-3">
-    <%= f.submit "保存",class: "btn btn-primary submit-btn form" %>    
+  <% if @user.avatar? %>
+    <%= link_to (image_tag resource.avatar.to_s, class:"icon block") %>
+  <% else %>
+    <image src="/assets/default_user_image.jpg" class="icon" %>
+  <% end %>
+
+  <div class="field mb-2 mt-3">
+    <label for="js_presentImg" class="btn btn-info form">
+      <span>アイコン画像の変更</span>
+      <%= f.file_field :avatar, id: :js_presentImg, autofocus: true, class:"form-control-file", style: "display:none;" %>
+    </label>
+  </div>
+
+  <div class="actions mt-4">
+    <%= f.submit "変更を保存",class: "btn btn-primary form" %>    
   </div>
 <% end %>
 
-<p><%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当に削除してよろしいですか？" }, method: :delete,class: "btn btn-danger submit-btns"  %></p>
+<p><%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当に削除してよろしいですか？\n(アカウント内のデータは全て消えてしまいます。)" }, method: :delete,class: "btn btn-danger submit-btns"  %></p>
 </div>
+

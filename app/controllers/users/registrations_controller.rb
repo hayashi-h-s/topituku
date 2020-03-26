@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     build_resource(sign_up_params)
-
+    resource.avatar = "default_user_image.jpg"
     resource.save
     yield resource if block_given?
     if resource.persisted?
@@ -47,7 +47,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if resource_updated
       set_flash_message_for_update(resource, prev_unconfirmed_email)
       bypass_sign_in resource, scope: resource_name if sign_in_after_change_password?
-
       redirect_to user_path(resource)
     else
       clean_up_passwords resource

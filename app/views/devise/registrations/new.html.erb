@@ -26,9 +26,13 @@
       <%= f.label :パスワード（確認）%><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-label-group form" %>
     </div>
-    
-    <%= f.file_field :avatar %>
-    <%= f.submit 'ユーザー画像をアップロードする'%>
+
+    <div class="field mb-2">
+      <label for="js_presentImg" class="btn btn-info form">
+        <span>アイコン画像の設定(任意)</span>
+        <%= f.file_field :avatar, id: :js_presentImg, autofocus: true, class:"form-control-file", style: "display:none;" %>
+      </label>
+    </div>
 
 
     <%= f.submit "登録",class: "btn btn-primary form" %>
