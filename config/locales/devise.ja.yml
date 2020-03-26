@@ -5,7 +5,6 @@ ja:
       user:
         remove_avatar_check_box: "プロフィール画像を削除"
         avatar: "プロフィール画像"
-        user_name: "ユーザーネーム"
         name: "ユーザーネーム"
         current_password: "現在のパスワード"
         email: "メールアドレス"

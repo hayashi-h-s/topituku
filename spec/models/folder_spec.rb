@@ -30,5 +30,4 @@ RSpec.feature 'フォルダが表示機能' do
     @folder.valid?
     # expect(micropost.errors).to be_added(:title, :blank)
   end
-
 end
