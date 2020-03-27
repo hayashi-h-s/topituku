@@ -109,13 +109,18 @@ li{
   border-radius: 15px;   
 }
 
-
-
 //dropdownのデザイン
 
 .dropdwn{
     // max-width: 1200px;
     display: flex;
+    // display: inline;
+}
+
+.dropdwn-folder{
+    // max-width: 1200px;
+    display: flex;
+    display: inline-block;
 }
 
 ul{
@@ -126,18 +131,26 @@ ul{
     color: #fff;
 }
 li{
-    max-width: calc(1200px/5);
+    // max-width: calc(1200px/5);
     position: relative;
     padding: 5px;
     // display: block;
     cursor: pointer;
+    z-index: 10;    
 }
 
 .dropdwn>li{
     width: 120px;
     margin: 1px;
     // background: #7ba5ff;
-    display: inline;
+    display: inline-block;
+}
+
+.dropdwn-folder>li{
+    // width: 120px;
+    margin: 1px;
+    // background: #7ba5ff;
+    display: inline-block;
 }
 
 .dropdwn_menu{
@@ -152,6 +165,8 @@ li{
 
 .dropdwn_menu li{
     width: 100%;
+    background:white;
+    z-index: 10;         
 }
 
 .dropdwn_menu li a{
@@ -159,6 +174,7 @@ li{
     margin: -5px 5px -5px -5px;
     display: block;
     // color: #fff;
+    z-index: 10;         
 }
 
 li a:hover{

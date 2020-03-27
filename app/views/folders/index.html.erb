@@ -1,5 +1,13 @@
+<script>
+  $(function(){
+      $('.dropdwn-folder li').hover(function(){
+          $("ul:not(:animated)", this).slideDown();
+      }, function(){
+          $("ul.dropdwn_menu",this).slideUp();
+      });
+  });
+</script>
  
-
  <% @folders.each do |folder| %>
   <div class="card mx-auto" style="width: 90%;">
     <div class="card-body">
@@ -15,16 +23,19 @@
       <div class="ml-3">
         <span class="folder-title"><%= folder.title %></span>
         <span class="float-right">
-          <%= link_to "","/game/#{folder.id}",class: "fas fa-gamepad fa-border fa-2x" %>
-          <%= link_to "",folder_posts_path(folder),class: "fas fa-folder-open fa-border fa-2x" %>        
-          <% if folder.user == current_user %>
-            <%= link_to "",edit_folder_path(folder),class: "fas fa-edit fa-border fa-2x" %>
-            <%= link_to "",new_folder_post_path(folder),class: "fas fa-plus fa-border fa-2x" %>
-            <%= link_to "", folder_path(folder), method: :delete,class:"fas fa-trash-alt fa-border fa-2x"  %>   
-          <% end %>
+          <span class="float-right">
+            <%= link_to "","/game/#{folder.id}",class: "fas fa-gamepad fa-border fa-2x" %>
+            <%= link_to "",folder_posts_path(folder),class: "fas fa-folder-open fa-border fa-2x" %>        
+            <% if folder.user == current_user %>
+              <%= link_to "",edit_folder_path(folder),class: "fas fa-edit fa-border fa-2x" %>
+              <%= link_to "",new_folder_post_path(folder),class: "fas fa-plus fa-border fa-2x" %>
+              <%= link_to "", folder_path(folder), method: :delete,class:"fas fa-trash-alt fa-border fa-2x"  %>   
+            <% end %>
+          </span>        
         </span>
       </div>
     </div>
   </div>
 <% end %>
 <%= paginate @folders %>
+

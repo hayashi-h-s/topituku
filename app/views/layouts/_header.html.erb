@@ -8,22 +8,20 @@
   });
 </script>
 
-
-
 <header class="navbar navbar-expand-xl navbar-light bg-light sticky-top">
   <h1 class="header-logo"><%= link_to "トピつく。", root_path %></h1>
   <div class="float-right">
     <ul class="dropdwn">
-      <li ><span class="fas fa-user fa-border fa-3x"></span>
-          <ul class="dropdwn_menu">
-            <% if user_signed_in? %>
-              <li><%= link_to "プロフィール",user_path(current_user) %></li> 
-              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>  
-            <% else %>
-            <li><%= link_to "アカウント作成", new_user_registration_path %></li> 
-              <li><%= link_to "ログイン", new_user_session_path %></li> 
-            <% end %>          
-          </ul>
+      <li><span class="fas fa-user fa-border fa-3x"></span>
+        <ul class="dropdwn_menu">
+          <% if user_signed_in? %>
+            <li><%= link_to "プロフィール",user_path(current_user) %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>  
+          <% else %>
+          <li><%= link_to "アカウント作成", new_user_registration_path %></li> 
+            <li><%= link_to "ログイン", new_user_session_path %></li> 
+          <% end %>          
+        </ul>
       </li>      
       <li ><span class="fas fa-caret-square-down fa-border fa-3x"></span>
           <ul class="dropdwn_menu">
