@@ -1,14 +1,5 @@
-<script>
-  $(function(){
-      $('.dropdwn-folder li').hover(function(){
-          $("ul:not(:animated)", this).slideDown();
-      }, function(){
-          $("ul.dropdwn_menu",this).slideUp();
-      });
-  });
-</script>
- 
- <% @folders.each do |folder| %>
+
+<% @folders.each do |folder| %>
   <div class="card mx-auto" style="width: 90%;">
     <div class="card-body">
       <span class="user-name">

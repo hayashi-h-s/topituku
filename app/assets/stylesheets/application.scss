@@ -140,7 +140,7 @@ li{
 }
 
 .dropdwn>li{
-    width: 120px;
+    // width: 120px;
     margin: 1px;
     // background: #7ba5ff;
     display: inline-block;
@@ -154,17 +154,17 @@ li{
 }
 
 .dropdwn_menu{
-    width: 100%;
+    width: 120px;
     display: none;
     position: absolute;
-    margin-left: -5px;
+    margin-left: -20px;
     margin-top: 5px;
     padding: 0;
     background: white;
 }
 
 .dropdwn_menu li{
-    width: 100%;
+    width: 120px;
     background:white;
     z-index: 10;         
 }
