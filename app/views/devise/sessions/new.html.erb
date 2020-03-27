@@ -24,11 +24,8 @@
   <% end %>
 
   <%= form_for(resource, as: resource_name,url: session_path(resource_name)) do |f| %>
-    <%= f.hidden_field :email, value: 'max9173627@gmail.com' %>
-    <%= f.hidden_field :password, value: 'hayahaya' %>
+    <%= f.hidden_field :email, value: 'topituku@test.com' %>
+    <%= f.hidden_field :password, value: 'password' %>
     <%= f.submit 'テストユーザーでログイン', class: 'btn btn-info mt-3 form' %>
   <% end %>  
 </div>
-
-
-

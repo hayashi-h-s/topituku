@@ -1,25 +1,36 @@
-
 ja:
   activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"          
+            email:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
+            password:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
+              confirmation: "が内容とあっていません。"
     attributes:
       user:
-        remove_avatar_check_box: "プロフィール画像を削除"
-        avatar: "プロフィール画像"
-        name: "ユーザーネーム"
         current_password: "現在のパスワード"
+        name: 名前
         email: "メールアドレス"
-        resend_email: "送信先のメールアドレス"
         password: "パスワード"
-        password_confirmation: "パスワード再入力"
-        newpassword: "新しいパスワード"
-        newpassword_confirmation: "新しいパスワードを再入力"
-        remember_me: "ログイン状態を保存"
-        taken: "は既に使用されています。"
-        blank: "が入力されていません。"
-        too_short: "は%{count}文字以上に設定して下さい。"
-        too_long: "は%{count}文字以下に設定して下さい。"
-        invalid: "は有効でありません。"
-        confirmation: "が内容と一致しません。"
+        password_confirmation: "確認用パスワード"
+        remember_me: "次回から自動的にログイン"
     models:
       user: "ユーザー"
   devise:
@@ -34,8 +45,8 @@ ja:
       reset_password_instructions:
         action: "パスワード変更"
         greeting: "こんにちは、%{recipient}さん!"
-        instruction: "パスワードの再設定がリクエストされました。次のリンクでパスワードの再設定が出来ます。"
-        instruction_2: "心当たりがなければ、このメールは無視してください。"
+        instruction: "誰かがパスワードの再設定を希望しました。次のリンクでパスワードの再設定が出来ます。"
+        instruction_2: "あなたが希望したのではないのなら、このメールは無視してください。"
         instruction_3: "上のリンクにアクセスして新しいパスワードを設定するまで、パスワードは変更されません。"
       unlock_instructions:
         action: "アカウントのロック解除"
@@ -46,14 +57,14 @@ ja:
       edit:
         change_my_password: "パスワードを変更する"
         change_your_password: "パスワードを変更"
-        confirm_new_password: "新しいパスワードの確認"
+        confirm_new_password: "確認用新しいパスワード"
         new_password: "新しいパスワード"
       new:
-        forgot_your_password: "パスワードを忘れたら"
+        forgot_your_password: "パスワードを忘れましたか?"
         send_me_reset_password_instructions: "パスワードの再設定方法を送信する"
     registrations:
       edit:
-        are_you_sure: "本当によろしいですか?"
+        are_you_sure: "本当に良いですか?"
         cancel_my_account: "アカウント削除"
         currently_waiting_confirmation_for_email: "%{email} の確認待ち"
         leave_blank_if_you_don_t_want_to_change_it: "空欄のままなら変更しません"

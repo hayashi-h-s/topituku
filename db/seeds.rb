@@ -34,8 +34,8 @@
     #   @folder.posts.create(content: elem
 #     # end
 
-@user1 = User.create!(name:  "test",
-                     email: "test@test.com",
+@user1 = User.create!(name:  "トピつく太郎",
+                     email: "topituku@test.com",
                      password:              "password",
                      password_confirmation: "password",
                      )
