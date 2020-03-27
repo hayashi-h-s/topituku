@@ -1,18 +1,38 @@
+<script>
+  $(function(){
+      $('.dropdwn li').hover(function(){
+          $("ul:not(:animated)", this).slideDown();
+      }, function(){
+          $("ul.dropdwn_menu",this).slideUp();
+      });
+  });
+</script>
 
 
 
 <header class="navbar navbar-expand-xl navbar-light bg-light sticky-top">
   <h1 class="header-logo"><%= link_to "トピつく。", root_path %></h1>
   <div class="float-right">
-    <% if user_signed_in? %>
-      <%= link_to "",user_path(current_user),class:"fas fa-user fa-border fa-3x" %>    
-      <%= link_to "", folders_path,class: "fas fa-list fa-border fa-3x" %>
-      <%= link_to "", new_folder_path,class: "fas fa-folder-plus fa-border fa-3x" %>
-      <%= link_to "", destroy_user_session_path, method: :delete,class:"fas fa-sign-out-alt fa-border fa-3x"  %>
-    <% else %>
-      <%= link_to "", new_user_registration_path,class:"fas fa-user-plus fa-border fa-3x" %>
-      <%= link_to "", new_user_session_path,class:"fas fa-sign-in-alt fa-border fa-3x" %>
-      <%= link_to "", folders_path,class: "fas fa-list fa-border fa-3x" %>      
-    <% end %>
+    <ul class="dropdwn">
+      <li ><span class="fas fa-user fa-border fa-3x"></span>
+          <ul class="dropdwn_menu">
+            <% if user_signed_in? %>
+              <li><%= link_to "プロフィール",user_path(current_user) %></li> 
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>  
+            <% else %>
+            <li><%= link_to "アカウント作成", new_user_registration_path %></li> 
+              <li><%= link_to "ログイン", new_user_session_path %></li> 
+            <% end %>          
+          </ul>
+      </li>      
+      <li ><span class="fas fa-caret-square-down fa-border fa-3x"></span>
+          <ul class="dropdwn_menu">
+            <li><%= link_to "フォルダリスト", folders_path %></li>           
+            <% if user_signed_in? %>
+              <li><%= link_to "フォルダ作成", new_folder_path %></li> 
+            <% end %>
+          </ul>
+      </li>          
+    </ul>      
   </div>
 </header>
