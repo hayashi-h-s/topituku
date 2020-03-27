@@ -25,9 +25,9 @@ https://ran-topi.herokuapp.com/
  
 * フォルダ投稿機能(CRUD)
 ＊ ユーザー登録,ログイン,編集機能(devise)
-＊ 画像投稿、削除機能(carrierwave)
-＊ 投稿一覧、投稿詳細表示機能
+＊ 画像投稿,削除機能(carrierwave)
+＊ 投稿一覧,投稿詳細表示機能
 * 投稿内容をランダムで表示する機能
 ＊ ページネーション機能(kaminari)
-＊ 単体spec、システムspec
+＊ 単体spec,システムspec
 
