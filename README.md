@@ -1,36 +1,33 @@
-# README
+# トピつく。
  
- 
-# Randome_Talking
- 
-ランダムで話題を提供してくれるアプリです。
-呑み会や合コンなどで使えます。
+作成したトークテーマや罰ゲームなどをランダムで表示してくれるWEBアプリです。
+呑み会や合コンなどを盛り上げるためにつくりました。
 
-# ワイヤーフレーム
-
-自分用のメモとして作りましたので、わかりにくいところがあるかと思いますが、ご了承ください。  
-
-Moqupsで作成  
-https://app.moqups.com/GJmUP4y8xs/view/page/ab69e1c5f
- 
 # 本番環境
  
-Herokuでデプロイ  
-https://random-talking.herokuapp.com/  
-  
-随時更新します。
- 
-# 実装予定の機能一覧、使用gemなど
- 
-* フォルダ投稿機能(CRUD)
-* 投稿したフォルダをの内容をランダムで表示する機能
+Herokuでデプロイ 
 
+https://ran-topi.herokuapp.com/
 
 # 使用技術
  
 * Ruby  2.6.5
 * Rubu on Rails 6.0.1
-* PostgreSQL 11.4
-* Sass,Bootstrap
+* MySQL 5.7
+* Sass,Bootstrap,JQuery
 * GitHub,Git
+＊ RSpec
+＊ AWS(今後導入予定)
+＊ Docker(今後導入予定)
+＊ Circle CI/CD(今後導入予定)
+ 
+# 実装の機能一覧、使用gemなど
+ 
+* フォルダ投稿機能(CRUD)
+＊ ユーザー登録,ログイン,編集機能(devise)
+＊ 画像投稿、削除機能(carrierwave)
+＊ 投稿一覧、投稿詳細表示機能
+* 投稿内容をランダムで表示する機能
+＊ ページネーション機能(kaminari)
+＊ 単体spec、システムspec
 
