@@ -9,12 +9,12 @@
       <%= f.text_field :name, autofocus: true,class: "form-label-group form" %>
     </div>
 
-    <div class="field">
+    <div class="field mt-2">
       <%= f.label :メールアドレス %><br />
       <%= f.email_field :email, autocomplete: "email",class: "form-label-group form" %>
     </div>
 
-    <div class="field">
+    <div class="field mt-2">
       <%= f.label :パスワード %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -22,7 +22,7 @@
       <%= f.password_field :password, autocomplete: "new-password",class: "form-label-group form" %>
     </div>
 
-    <div class="field mb-3">
+    <div class="field mb-3 mt-2">
       <%= f.label :パスワード（確認）%><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-label-group form" %>
     </div>

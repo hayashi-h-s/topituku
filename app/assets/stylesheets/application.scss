@@ -29,14 +29,18 @@
 
 //header
 
-// header{
-//   position :fixed;
-//   top: 0;
-//   z-index: 10;  
-// }
+header{
+  text-align: center;
+  height: 80px;
+  background-color: rgb(239, 255, 253);
+}
 
 .header-logo{
   font-family:'Impact';
+  text-align: center;
+  padding-top:10px;
+  font-size:40px;
+  display: inline-block;
 }
 
 a{
@@ -77,7 +81,7 @@ li{
 }
 
 
-.fas{
+.fas,.far{
   // color:	#005FFF;
   color:	#005FFF;
 }
@@ -114,7 +118,7 @@ li{
 .dropdwn{
     // max-width: 1200px;
     display: flex;
-    // display: inline;
+    display:inline-block
 }
 
 .dropdwn-folder{
@@ -133,7 +137,6 @@ ul{
 li{
     // max-width: calc(1200px/5);
     position: relative;
-    padding: 5px;
     // display: block;
     cursor: pointer;
     z-index: 10;    
@@ -157,7 +160,7 @@ li{
     width: 120px;
     display: none;
     position: absolute;
-    margin-left: -20px;
+    margin-left: -30px;
     margin-top: 5px;
     padding: 0;
     background: white;
@@ -181,4 +184,3 @@ li a:hover{
     // background: #b3d7ff;
     // color: rgb(65, 65, 65);
 }
-

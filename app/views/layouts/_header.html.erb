@@ -8,9 +8,21 @@
   });
 </script>
 
-<header class="navbar navbar-expand-xl navbar-light bg-light sticky-top">
-  <h1 class="header-logo"><%= link_to "トピつく。", root_path %></h1>
-  <div class="float-right">
+<header class="sticky-top">
+  <div class="header-logo"><%= link_to "トピつく。", root_path %></div>
+  <div class="float-right mt-1 mr-5">
+     <ul class="dropdwn">
+      <li ><span class="far fa-caret-square-down fa-border fa-3x"></span>
+          <ul class="dropdwn_menu">
+            <li><%= link_to "フォルダリスト", folders_path %></li>           
+            <% if user_signed_in? %>
+              <li><%= link_to "フォルダ作成", new_folder_path %></li> 
+            <% end %>
+          </ul>
+      </li>    
+    </ul>       
+  </div>      
+  <div class="float-left mt-1 ml-5">
     <ul class="dropdwn">
       <li><span class="fas fa-user fa-border fa-3x"></span>
         <ul class="dropdwn_menu">
@@ -22,15 +34,9 @@
             <li><%= link_to "ログイン", new_user_session_path %></li> 
           <% end %>          
         </ul>
-      </li>      
-      <li ><span class="fas fa-caret-square-down fa-border fa-3x"></span>
-          <ul class="dropdwn_menu">
-            <li><%= link_to "フォルダリスト", folders_path %></li>           
-            <% if user_signed_in? %>
-              <li><%= link_to "フォルダ作成", new_folder_path %></li> 
-            <% end %>
-          </ul>
-      </li>          
-    </ul>      
-  </div>
+      </li>  
+    </ul>          
+  </div>    
 </header>
+
+     

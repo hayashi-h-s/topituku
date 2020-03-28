@@ -32,8 +32,7 @@
           <%= link_to "",folder_posts_path(folder),class: "fas fa-folder-open fa-border fa-2x" %>
           <%= link_to "",edit_folder_path(folder),class: "fas fa-edit fa-border fa-2x" %>
           <%= link_to "",new_folder_post_path(folder),class: "fas fa-plus fa-border fa-2x" %>
-          <%= link_to "",folder_path(folder), method: :delete,class:"fas fa-trash-alt fa-border fa-2x" %>
-          
+          <%= link_to "",folder_path(folder), method: :delete,class:"fas fa-trash-alt fa-border fa-2x", data: { confirm: "本当に削除してよろしいですか？\n(フォルダは復元できません。)" } %>
           <%#= link_to "",user_folder_path(folder),class: "fas fa-gamepad fa-border fa-2x" %>
           <%#= link_to "",new_user_folder_post_path(folder),class: "fas fa-folder-open fa-border fa-2x" %>      
         </span>
