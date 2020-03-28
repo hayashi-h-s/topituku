@@ -11,7 +11,10 @@
   </head>
 
   <body>
-    <%= render 'layouts/header'%>
+
+    <% unless current_page?(root_path) %>
+      <%= render 'layouts/header'%>
+    <% end %>    
     <% if notice %>
         <div class="alert alert-info alert-dismissible" role="alert">
           <%= notice %>
