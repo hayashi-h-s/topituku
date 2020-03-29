@@ -9,8 +9,12 @@
 </script>
 
 <header class="sticky-top">
-  <div class="header-logo"><%= link_to "トピつく。", root_path %></div>
-  <div class="float-right mt-1 mr-5">
+  <% if user_signed_in? %>
+    <div class="header-logo"><%= link_to "トピつく。", folders_path %></div>
+  <% else %>
+    <div class="header-logo"><%= link_to "トピつく。", root_path %></div>
+  <% end %>
+  <div class="float-right header-right mt-1">
      <ul class="dropdwn">
       <li ><span class="far fa-caret-square-down fa-border fa-3x"></span>
           <ul class="dropdwn_menu">
@@ -22,7 +26,7 @@
       </li>    
     </ul>       
   </div>      
-  <div class="float-left mt-1 ml-5">
+  <div class="float-left header-left mt-1">
     <ul class="dropdwn">
       <li><span class="fas fa-user fa-border fa-3x"></span>
         <ul class="dropdwn_menu">
@@ -30,7 +34,7 @@
             <li><%= link_to "プロフィール",user_path(current_user) %></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>  
           <% else %>
-          <li><%= link_to "アカウント作成", new_user_registration_path %></li> 
+            <li><%= link_to "アカウント作成", new_user_registration_path %></li> 
             <li><%= link_to "ログイン", new_user_session_path %></li> 
           <% end %>          
         </ul>

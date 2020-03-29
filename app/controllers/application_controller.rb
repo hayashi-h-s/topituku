@@ -49,6 +49,12 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def not_logged_in_user
+      if user_signed_in?
+        redirect_to folders_path
+      end
+    end    
+
 
     # def current_user?
     #   if current_user.blank?

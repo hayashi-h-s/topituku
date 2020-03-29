@@ -35,9 +35,17 @@ header{
   background-color: rgb(239, 255, 253);
 }
 
+.header-left{
+  margin-left: 28px;
+}
+
+.header-right{
+  margin-right: 28px;
+}
+
 .header-logo{
   font-family:'Impact';
-  text-align: center;
+  // text-align: center;
   padding-top:10px;
   font-size:40px;
   display: inline-block;
@@ -55,11 +63,6 @@ text-decoration: none;
 
 li{
   list-style:none;
-}
-
-
-.loat-right{
-  float: right;
 }
 
 .submit-btn{
