@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_many :folders, dependent: :destroy
 
-  # validates :name, presence: true
+  validates :name, presence: true
   # validates :email, presence: true
   # validates :password, presence: true
   mount_uploader :avatar, ImageUploader

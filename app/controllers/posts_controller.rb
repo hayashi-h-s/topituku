@@ -31,6 +31,10 @@ class PostsController < ApplicationController
     redirect_back fallback_location: root_path, notice: "トークテーマを削除しました"
   end
 
+  def edit  
+    
+  end
+
   private
 
     def post_params

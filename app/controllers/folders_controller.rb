@@ -20,8 +20,8 @@ class FoldersController < ApplicationController
       flash[:notice] = "「#{@folder.title}」を投稿しました"
       redirect_to folder_posts_path(@folder)
     else
-      flash.now[:alert] = "フォルダ名を入力してください"
-      render 'new'
+      flash[:alert] = "フォルダ名を入力してください"
+      redirect_to new_folder_path(@folder)
     end
   end
 

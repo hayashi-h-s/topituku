@@ -41,14 +41,14 @@
                      )
 
 @folder1 = @user1.folders.create!(title: "トークテーマ集")
-@folder1 = @user1.folders.create!(title: "トークテーマ集")
-@folder1 = @user1.folders.create!(title: "トークテーマ集")
-@folder1 = @user1.folders.create!(title: "トークテーマ集")
-@folder1 = @user1.folders.create!(title: "トークテーマ集")
-@folder1 = @user1.folders.create!(title: "トークテーマ集")
-@folder1 = @user1.folders.create!(title: "トークテーマ集")
-@folder1 = @user1.folders.create!(title: "トークテーマ集")
-@folder1 = @user1.folders.create!(title: "トークテーマ集")
+@folder2 = @user1.folders.create!(title: "トークテーマ集")
+@folder3 = @user1.folders.create!(title: "トークテーマ集")
+@folder4 = @user1.folders.create!(title: "トークテーマ集")
+@folder5 = @user1.folders.create!(title: "トークテーマ集")
+@folder6 = @user1.folders.create!(title: "トークテーマ集")
+@folder7 = @user1.folders.create!(title: "トークテーマ集")
+@folder8 = @user1.folders.create!(title: "トークテーマ集")
+@folder9 = @user1.folders.create!(title: "トークテーマ集")
 
 posts1 = [
   "有名人で誰が好き？",
@@ -93,6 +93,7 @@ posts1 = [
   "子供の頃の夢は？",
   "友達になりたい人の特徴",
 ]
+
 posts1.each do |elem|
   @folder1.posts.create(content: elem)
 end
