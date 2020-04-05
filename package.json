@@ -12,5 +12,9 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.9.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/hayashi-h-s/Random_-Talking.git",
+  "author": "hayamizhin <max9173627>",
+  "license": "MIT"
 }

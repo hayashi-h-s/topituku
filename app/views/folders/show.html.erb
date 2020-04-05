@@ -25,12 +25,12 @@
     }
 </script>
 
-<div class="mx-auto text-center game-page">
-  <div class="card text-center mx-auto w-90">
-    <div class="card-body">
-    <% @random.each do |post| %>
-      <h1 class="topick"><%= post.content %></h1>
-    <% end %>
+<div class="game-page">
+  <div class="card text-center mx-auto w-90 h-60">
+    <div class="card-body topick-box">
+      <% @random.each do |post| %>
+        <h1 class="topick "><%= post.content %></h1>
+      <% end %>
     </div>
   </div>
   <hr>
