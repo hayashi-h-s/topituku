@@ -1,24 +1,56 @@
-// Place all the styles related to the folders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// // 文字の大きさ
+// https://teratail.com/questions/49808
+// 高さ
+// https://www.granfairs.com/blog/staff/centering-by-css
+// .outer{
+//   display: table;
+//   width: 100%;
+// border:1px solid black;font-size:16px;margin:5px 2px;width:70%;
+// height: 300px;
+// text-align: center;
+// }
 
-// show
+// .inner{
+//   display: table-cell;
+//   vertical-align: middle;
+// }
 
 .topick{
-  font-size:50px;
+  display: table-cell;
+  vertical-align: middle;  
+  font-size:11vmin;
   font-family:'Century Gothic';
   // color: red;
 }
 
 .topick-box{
+  // display: table;  
   // text-align: center;
   // background-color: red;
   // color: red;
+  border-radius: 10px;
+  background-color: white;
+  display: table;
+  // position: relative;
+  height: 60%;
+  text-align: center;
 }
 
 .game-logo{
-  font-size:50px;
+  // display: table-cell;
+  // vertical-align: middle;  
+  display: table-cell;
+  vertical-align: middle;  
+  font-size:11vmin;
   font-family:'Impact';
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+  // margin: auto;
+  // // width: 80%;
+  // height: 3.2rem;  
  }
  
 //  .next{
@@ -56,7 +88,7 @@
 }
 
 .h-60{
-  height: 60%;
+  
 }
 
 // .card{
