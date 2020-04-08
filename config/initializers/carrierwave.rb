@@ -10,10 +10,10 @@ if Rails.env.production?
       # Amazon S3用の設定
       provider: 'AWS',
       region: ENV['AWS_S3_REGION'],
-      aws_access_key_id: ENV['AKIA3AST6REKC5CJCKE'],
-      aws_secret_access_key: ENV['JpBUN+VsZFMqBomE7XNR1wSVfeng00BghzBHXcak'],
+      aws_access_key_id: ENV['AWS_IAM_ACCESS_KEY_ID'],
+      aws_secret_access_key: ENV['AWS_IAM_ACCESS_KEY'],
     }
-    config.fog_directory     =  ENV['topituku']
+    config.fog_directory     =  ENV['AWS_S3_BUCKET']
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
   end
 
