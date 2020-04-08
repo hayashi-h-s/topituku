@@ -17,9 +17,20 @@
 %>
 
 <div class="text-center">
+  <div class="user-name-show">
+    <% if @folder.user.avatar? %>
+      <%= image_tag @folder.user.avatar.to_s, class:"icon" %>
+    <% else %>
+      <image src="/assets/default_user_image.jpg" class="icon" %>
+    <% end %>
+    <%= @folder.user.name %> 
+  </div>
+</div>
+
+<div class="text-center">
   <div class="user-name-show"><%#= @user.name %> </div>
   <%#= link_to "", edit_user_registration_path(@user),class:"fas fa-user-edit fa-border fa-2x mb-3" %>
-  <p class="lead">トピック一覧</p>
+  <p class="lead mt-3">「<%= @folder.title %>」のトピック一覧</p>
 </div>
 
 <% if @posts.blank? %>
