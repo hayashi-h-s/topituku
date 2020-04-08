@@ -73,3 +73,6 @@ gem 'rails-i18n'
 gem 'devise' 
 gem 'carrierwave'
 gem 'kaminari'
+
+gem 'rmagick'
+gem 'fog-aws'
