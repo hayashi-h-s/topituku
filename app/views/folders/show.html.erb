@@ -37,3 +37,23 @@
     <%= link_to "次のトピックへ",folder_path,class:"btn btn-info w-90 next" %>
   </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.0.0/velocity.min.js"></script>
+<script type="text/javascript">
+(function($) {
+    $(function () {
+        $('.sub-menu > a').on('click', function (e) {
+            e.preventDefault();
+            var $subNav = $(this).next('.sub-menu-nav');
+            if ($subNav.css("display") === "none") {
+                $(this).addClass('is-active');
+                $subNav.velocity('slideDown', {duration: 400});
+            } else {
+                $(this).removeClass('is-active');
+                $subNav.velocity('slideUp', {duration: 400});
+            }
+        });
+    });
+})(jQuery);
+</script>

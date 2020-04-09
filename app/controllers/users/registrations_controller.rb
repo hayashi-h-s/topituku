@@ -13,7 +13,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     build_resource(sign_up_params)
-    resource.avatar = "default_user_image.jpg"
     resource.save
     yield resource if block_given?
     if resource.persisted?
