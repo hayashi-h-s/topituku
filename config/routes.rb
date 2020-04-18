@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   resources :folders do
     resources :posts
+    resources :likes, only: [:create, :destroy]    
   end 
 end
