@@ -13,9 +13,6 @@ jQuery(function($){
 </script>
 
 
-<% @user.liked_folders.each do |folder| %>
-  <%= folder.title %>
-<% end %>
 
 <% if @user == current_user %>
   <%= link_to "", edit_user_registration_path(@user),class:"fas fa-user-edit fa-border fa-2x mb-3 user-edit" %>
@@ -29,17 +26,12 @@ jQuery(function($){
     <% end %>
     <%= @user.name %> 
   </div>
-  <p class="lead mt-3">Myフォルダ一覧</p>
 </div>
 
-
-
-<!--タブ-->
-<ul class="tab-group" style="width: 90%;">
-  <li class="tab is-active">Myフォルダ一覧</li>
-  <li class="tab">Tab-B</li>
+<ul class="tab-group mt-3" style="width: 90%;">
+  <li class="tab is-active">Myフォルダ</li>
+  <li class="tab">いいね</li>
 </ul>
-<!--タブを切り替えて表示するコンテンツ-->
 <div class="panel-group mx-auto" style="width: 90%;">
   <div class="panel is-show">
     <% if @folders.blank? %>
@@ -52,7 +44,14 @@ jQuery(function($){
       <% @folders.each do |folder| %>
         <div class="card mx-auto">
           <div class="card-body">
-            <span class="user-name"><%= folder.user.name %></span>
+            <span class="user-name">
+              <% if folder.user.avatar? %>
+                <%= link_to (image_tag folder.user.avatar.to_s, class:"icon"), user_path(folder.user) %>
+              <% else %>
+                <%= link_to image_tag('/assets/default_user_image.jpg', class:"icon"), user_path(folder.user)  %>
+              <% end %>              
+              <%= folder.user.name %>
+            </span>
             <p>
             <span class="card-title"><%= folder.title %></span>
             <span class="float-right">
@@ -68,11 +67,38 @@ jQuery(function($){
     <% end %>
   </div>
   <div class="panel">
-    <% @user.liked_folders.each do |folder| %>
-      <%= folder.title %>
+    <% if @user.liked_folders.blank? %>    
+      <div class="card mx-auto">
+        <div class="card-body text-center">
+          いいねをした投稿がありません。
+        </div>
+      </div>    
+    <% else %>          
+      <% @user.liked_folders.each do |folder| %>
+        <div class="card mx-auto">
+          <div class="card-body">
+            <span class="user-name">
+              <% if folder.user.avatar? %>
+                <%= link_to (image_tag folder.user.avatar.to_s, class:"icon"), user_path(folder.user) %>
+              <% else %>
+                <%= link_to image_tag('/assets/default_user_image.jpg', class:"icon"), user_path(folder.user)  %>
+              <% end %>              
+              <%= folder.user.name %>
+            </span>
+            <p>
+            <span class="card-title"><%= folder.title %></span>
+            <span class="float-right">
+              <%= link_to "","/game/#{folder.id}",class: "fas fa-gamepad fa-border fa-2x" %>
+              <%= link_to "",folder_posts_path(folder),class: "fas fa-folder-open fa-border fa-2x" %>
+              <%= link_to "",edit_folder_path(folder),class: "fas fa-edit fa-border fa-2x" %>
+              <%= link_to "",new_folder_post_path(folder),class: "fas fa-plus fa-border fa-2x" %>
+              <%= link_to "",folder_path(folder), method: :delete,class:"fas fa-trash-alt fa-border fa-2x", data: { confirm: "本当に削除してよろしいですか？\n(フォルダは復元できません。)" } %>
+            </span>
+          </div>
+        </div>      
+      <% end %>
     <% end %>
   </div>
 </div>
-
 
 <%= paginate @folders %>
