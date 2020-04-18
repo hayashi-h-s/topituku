@@ -17,9 +17,9 @@
         <span class="float-right mt-3">
           <span class="float-right">
             <% if current_user.already_liked?(folder) %>
-              <%= link_to '', folder_like_path(folder,folder.likes), method: :delete, class:"fas fa-heart unlike" %>
+              <%= link_to '', folder_like_path(folder,folder.likes), method: :delete, class:"fas fa-heart unlike", remote: true  %>
             <% else %>
-              <%= link_to '', folder_likes_path(folder), method: "post", class:"fas fa-heart like" %>
+              <%= link_to '', folder_likes_path(folder), method: "post", class:"fas fa-heart like", remote: true  %>
             <% end %>
             <span class="ml-1"><%= folder.likes.count %></span>   
             <%= link_to "","/game/#{folder.id}",class: "fas fa-gamepad fa-2x fa-fw mr-2 ml-3" %>
@@ -44,4 +44,3 @@
   </div>
 <% end %>
 <%= paginate @folders %>
-<i class="far fa-caret-square-down"></i>
