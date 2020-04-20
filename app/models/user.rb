@@ -17,5 +17,5 @@ class User < ApplicationRecord
 
   def already_liked?(folder)
     self.likes.exists?(folder_id: folder.id)
-  end  
+  end
 end
