@@ -1,5 +1,5 @@
 <% if folder.user == current_user && current_user.already_liked?(folder) %>
-  <%= link_to '', folder_like_path(folder,folder.likes), method: :delete, class:"fas fa-heart unlike" %>
+  <%= link_to '', folder_like_path(folder.id,folder.likes), method: :delete, class:"fas fa-heart unlike" %>
 <% else %>
   <% if folder.user == current_user %>
     <%= link_to '', folder_likes_path(folder), method: "post", class:"fas fa-heart like" %>
