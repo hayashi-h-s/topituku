@@ -1,20 +1,12 @@
-<% if user_signed_in? %>
-    <% if blog.liked_by?(current_user) %>
-        <p><span>お気に入り解除: </span><%=link_to blog.likes.count, blog_likes_path(blog.id), method: :delete, remote: true %></p>
-    <% else %>
-        <p><span>お気に入り登録: </span><%=link_to blog.likes.count, blog_likes_path(blog.id), method: :post, remote: true %></p>
-    <% end %>
-<% else %>
-    <p><span>お気に入り数: </span><%= blog.likes.count %></p>
-<% end %>
-
 <% if folder.user == current_user && current_user.already_liked?(folder) %>
-<%= link_to '', folder_like_path(folder,folder.likes), method: :delete, class:"fas fa-heart unlike" %>
+  <%= link_to '', folder_like_path(folder,folder.likes), method: :delete, class:"fas fa-heart unlike" %>
 <% else %>
-<% if folder.user == current_user %>
-  <%= link_to '', folder_likes_path(folder), method: "post", class:"fas fa-heart like" %>
-<% else %>
-  <span class="fas fa-heart like"></span>
-<% end %>  
+  <% if folder.user == current_user %>
+    <%= link_to '', folder_likes_path(folder), method: "post", class:"fas fa-heart like" %>
+  <% else %>
+   <span class="fas fa-heart like"></span>
+  <% end %>  
 <% end %>
 <span class="ml-1"><%= folder.likes.count %></span>   
+
+
