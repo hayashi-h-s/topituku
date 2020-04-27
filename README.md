@@ -16,6 +16,7 @@ https://topituku.herokuapp.com/
 * 画像投稿機能(carrierwave,Amazon S3)
 * ページネーション機能(kaminari)
 * ユーザー機能(device)
+* 環境変数のセキュリティ管理(dotenv-rails)
 
 
 # 使用技術
