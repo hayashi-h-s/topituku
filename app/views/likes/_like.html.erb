@@ -1,12 +1,11 @@
-<% if folder.user == current_user && current_user.already_liked?(folder) %>
-  <%= link_to '', folder_like_path(folder.id,folder.likes), method: :delete, class:"fas fa-heart unlike" %>
+<% if user_signed_in?  && current_user.already_liked?(folder) %>
+  <%= link_to '', folder_like_path(folder.id,folder.likes), method: :delete, class:"fas fa-heart unlike",remote: true  
+%>
 <% else %>
-  <% if folder.user == current_user %>
-    <%= link_to '', folder_likes_path(folder), method: "post", class:"fas fa-heart like" %>
+  <% if user_signed_in?  %>
+    <%= link_to '', folder_likes_path(folder.id), method: :post, class:"fas fa-heart like",remote: true %>
   <% else %>
-   <span class="fas fa-heart like"></span>
-  <% end %>  
+    <span class="fas fa-heart like"></span>
+  <% end %>
 <% end %>
-<span class="ml-1"><%= folder.likes.count %></span>   
-
-
+<span class="ml-1"><%= folder.likes.count %></span>
