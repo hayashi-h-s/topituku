@@ -18,7 +18,7 @@ CarrierWave.configure do |config|
     #   config.fog_directory  = 'topituku'
     #   config.cache_storage = :fog
     when 'development'
-      config.fog_public = false       
+      config.fog_public = false
       config.fog_directory  = 'dev.topituku'
       config.cache_storage = :fog
 
@@ -39,7 +39,7 @@ if Rails.env.production?
       aws_secret_access_key: ENV['AWS_IAM_ACCESS_KEY'],
     }
     config.fog_directory     =  ENV['AWS_S3_BUCKET']
-    config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
+    # config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
   end
 
   # 日本語ファイル名の設定
