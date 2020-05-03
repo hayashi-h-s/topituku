@@ -54,8 +54,8 @@ group :test do
   gem 'launchy', '~> 2.4.3'
 end
 
-group :production do
-  gem 'mysql2', '~> 0.4.4'
+group :production, :staging do
+  gem 'unicorn'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
