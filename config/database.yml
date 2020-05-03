@@ -20,9 +20,9 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: <%= ENV['DATABASE_DEV_USER'] %>
-  password: <%= ENV['DATABASE_DEV_PASSWORD'] %>
-  host: <%= ENV['DATABASE_DEV_HOST'] %>
+  username: haya
+  password: Max9173627
+  host: topituku-db.c63j8gwfcxjz.ap-northeast-1.rds.amazonaws.com
 
 development:
   <<: *default
@@ -87,6 +87,6 @@ production:
   reconnect: false
   database: random_talking_production
   pool: 5
-  username: root
+  username: haya
   password: Max9173627
-  host: localhost
+  host: topituku-db.c63j8gwfcxjz.ap-northeast-1.rds.amazonaws.com
