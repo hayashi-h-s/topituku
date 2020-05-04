@@ -10,7 +10,6 @@ class FoldersController < ApplicationController
   end
 
   def new
-    # @user = User.find(params[:user_id])
     @folder = Folder.new
   end
 

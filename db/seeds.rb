@@ -2,8 +2,8 @@
 
 @user1 = User.create!(name:  "トピつく太郎",
                      email: "topituku@test.com",
-                     password:              "password",
-                     password_confirmation: "password",
+                     password:              "topituku",
+                     password_confirmation: "topituku",
                      )
 
 @folder1 = @user1.folders.create!(title: "盛り上がる話題集")
@@ -62,8 +62,8 @@ end
 
 @user2 = User.create!(name:  "恋バナ次郎",
                      email: "topituku2@test.com",
-                     password:              "password2",
-                     password_confirmation: "password2",
+                     password:              "topituku2",
+                     password_confirmation: "topituku2",
                      )
 
 @folder2 = @user2.folders.create!(title: "恋バナ集")
@@ -98,8 +98,8 @@ end
 
 @user3 = User.create!(name:  "罰ゲーム三郎",
                      email: "topituku3@test.com",
-                     password:              "password3",
-                     password_confirmation: "password3",
+                     password:              "topituku3",
+                     password_confirmation: "topituku3",
                      )
 
 #user３人目

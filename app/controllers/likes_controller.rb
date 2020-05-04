@@ -1,8 +1,7 @@
 class LikesController < ApplicationController
 
   def create
-    @folder = Folder.find(params[folder_id])
-    
+    # @folder = Folder.find(params[folder_id])
     @like = current_user.likes.build(folder_id: params[:folder_id])
     @like.save
     # binding.pry
@@ -11,7 +10,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @folder = Folder.find(params[folder_id])
+    # @folder = Folder.find(params[folder_id])
     @like = Like.find_by(folder_id: params[:folder_id], user_id: current_user.id)
     # binding.pry
     @like.destroy
