@@ -1,22 +1,27 @@
-# トピつく。
- 
-ランダムで話題を提供してくれるアプリです。
-呑み会や合コンなどで使えます。
 
- 
+# トピつく。
+
+自分で作成したフォルダ内の内容をランダムで表示してくれるアプリです。
+呑み会や合コンなどはもちろん、友人との親睦を深めるなどの用途で使えます。
+
 # 本番環境
  
-Herokuでデプロイしています。ログイン画面からテストユーザーでログインできます。
-https://topituku.herokuapp.com/
- 
+AWS[EC2]にデプロイしています。  
+ログインページより、テストユーザー(トピつく太郎)で簡単ログインできます。
+トピつく太郎のパスワード : topituku
+http://www.topituku.xyz/
+
 # 実装機能一覧、使用gemなど
  
-* フォルダ投稿機能(CRUD)
-* 投稿したフォルダをの内容をランダムで表示する機能
-* 画像投稿機能(carrierwave,Amazon S3)
-* ページネーション機能(kaminari)
+* folder投稿機能(CRUD)
+* folderに従属するpost投稿機能(CRUD)
+* folderに従属するpostsをランダムで表示
 * ユーザー機能(device)
+* ユーザーアイコン画像投稿、編集機能(carrierwave,Amazon S3)
+* いいね機能
+* ページネーション機能(kaminari)
 * 環境変数のセキュリティ管理(dotenv-rails)
+* レスポンシブデザイン（スマホサイズに対応）
 
 
 # 使用技術
@@ -29,3 +34,5 @@ https://topituku.herokuapp.com/
 * Bootstrap
 * jQuery 
 * GitHub,Git
+* AWS
+ - EC2
