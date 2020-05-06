@@ -35,4 +35,4 @@ http://www.topituku.xyz/
 * jQuery 
 * GitHub,Git
 * AWS
- - EC2
+  - EC2
