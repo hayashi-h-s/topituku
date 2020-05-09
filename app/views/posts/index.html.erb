@@ -16,16 +16,7 @@
 =end
 %>
 
-<div class="text-center">
-  <div class="user-name-show">
-    <% if @folder.user.avatar? %>
-      <%= image_tag @folder.user.avatar.to_s, class:"icon" %>
-    <% else %>
-      <%= link_to image_tag('https://topituku.s3-ap-northeast-1.amazonaws.com/uploads/user/f93c48a2-dae5-4a3f-9e39-ceffe303bf06.jpg', class:"icon"), user_path(@folder.user) %>
-    <% end %>
-    <%= @folder.user.name %> 
-  </div>
-</div>
+<%= render partial: 'users/user_icon', locals: { user: @folder.user } %>      
 
 <div class="text-center">
   <div class="user-name-show"><%#= @user.name %> </div>

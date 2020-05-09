@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @folder = Folder.find(params[:folder_id])
     @post = @folder.posts.find(params[:id])
     @post.destroy
-    redirect_back fallback_location: new_folder_post_path, notice: "トークテーマを削除しました"
+    redirect_back fallback_location: new_folder_post_path, notice: "トピック「#{@post.content}」を削除しました"
   end
 
   def edit  
