@@ -63,7 +63,7 @@ end
 @user2 = User.create!(name:  "恋バナ次郎",
                      email: "topituku2@test.com",
                      password:              "topituku2",
-                     password_confirmation: "topituku2",
+                     password_confirmation: "topituku2",                
                      )
 
 @folder2 = @user2.folders.create!(title: "恋バナ集")
