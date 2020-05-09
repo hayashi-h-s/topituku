@@ -12,19 +12,7 @@ jQuery(function($){
 });
 </script>
 
-<% if @user == current_user %>
-  <%= link_to "", edit_user_registration_path(@user),class:"fas fa-user-edit fa-border fa-2x mb-3 user-edit" %>
-<% end %>
-<div class="text-center">
-  <div class="user-name-show">
-    <% if @user.avatar? %>
-      <%= image_tag @user.avatar.to_s, class:"icon" %>
-    <% else %>
-      <image src='https://topituku.s3-ap-northeast-1.amazonaws.com/uploads/user/f93c48a2-dae5-4a3f-9e39-ceffe303bf06.jpg' class="icon" %>
-    <% end %>
-    <%= @user.name %> 
-  </div>
-</div>
+<%= render partial: 'user_icon', locals: { user: @user } %>      
 
 <ul class="tab-group mt-3" style="width: 90%;">
   <li class="tab is-active">Myフォルダ</li>
