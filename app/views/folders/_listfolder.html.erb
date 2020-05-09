@@ -18,11 +18,11 @@
               <span class="float-right">
                 <span id="likes_buttons_<%= folder.id %>">
                   <%= render partial: 'likes/like', locals: { folder: folder} %>
-                </span>              
+                </span>
                 <%= link_to "","/game/#{folder.id}",class: "fas fa-gamepad fa-2x fa-fw mr-2 ml-3" %>
                 <%= link_to "",folder_posts_path(folder),class: "fas fa-folder-open fa-2x fa-fw mr-1" %>        
                 <% if folder.user == current_user %>
-                  <ul class="dropdwn">   
+                  <ul class="dropdwn">
                     <li ><span class="fas fa-caret-square-down fa-2x fa-fw"></span>           
                       <ul class="dropdwn_menu">
                         <% if folder.user == current_user %>

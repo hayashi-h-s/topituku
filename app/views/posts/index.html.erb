@@ -21,7 +21,7 @@
     <% if @folder.user.avatar? %>
       <%= image_tag @folder.user.avatar.to_s, class:"icon" %>
     <% else %>
-      <image src="/assets/default_user_image.jpg" class="icon" %>
+      <%= link_to image_tag('https://topituku.s3-ap-northeast-1.amazonaws.com/uploads/user/f93c48a2-dae5-4a3f-9e39-ceffe303bf06.jpg', class:"icon"), user_path(@folder.user) %>
     <% end %>
     <%= @folder.user.name %> 
   </div>
@@ -40,15 +40,5 @@
     </div>
   </div>
 <% else %>
-  <% @posts.each do |post| %>
-    <div class="card mx-auto" style="width: 90%;">
-      <div class="card-body">
-        <span class="card-title"><%= post.content %></span>
-        <div class="float-right">
-          <%#= link_to "編集",edit_folder_post_path(post),class: "btn btn-primary" %> 
-          <%= link_to "削除",folder_post_path(@folder,post), method: :delete,class: "btn btn-primary" %>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  <%= render partial: 'listpost', locals: { folders: @posts} %>
 <% end %>

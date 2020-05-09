@@ -1,0 +1,13 @@
+<% @posts.each do |post| %>
+    <div class="card mx-auto" style="width: 90%;">
+        <div class="card-body">
+        <span class="card-title"><%= post.content %></span>
+        <div class="float-right">
+            <%#= link_to "編集",edit_folder_post_path(post),class: "btn btn-primary" %> 
+            <% if @folder.user == current_user %>
+            <%= link_to "削除",folder_post_path(@folder,post), method: :delete,class: "btn btn-primary" %>
+            <% end %>
+        </div>
+        </div>
+    </div>
+<% end %>
