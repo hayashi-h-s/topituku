@@ -1,3 +1,4 @@
+
 # トピつく。
 
 自分で作成したフォルダ内の内容をランダムで表示してくれるアプリです。  
@@ -8,7 +9,7 @@
  
 AWS[EC2]にデプロイしています。  
 ログインページより、テストユーザー(トピつく太郎)で簡単ログインできます。  
-トピつく太郎のパスワード : topituku
+トピつく太郎のパスワード : topituku  
 http://www.topituku.xyz/
 
 # 実装機能一覧、使用gemなど
@@ -39,3 +40,7 @@ http://www.topituku.xyz/
   - RDS for MySQL
   - Route53
   - S3
+  
+# AWS構成図
+　
+ ![aws_topituku](https://user-images.githubusercontent.com/49052894/81463386-42fac580-91f4-11ea-92d8-6b87612a1f1b.png)
