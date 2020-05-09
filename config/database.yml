@@ -23,10 +23,10 @@ default: &default
   username: root
   password: <%= ENV['DATABASE_DEV_PASSWORD'] %>
   host: localhost
+  
 development:
   <<: *default
   database: random_talking_development
-
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -86,6 +86,6 @@ production:
   reconnect: false
   database: random_talking_production
   pool: 5
-  username:  <%= ENV['DATABASE_DEV_USER'] %>
+  username: <%= ENV['DATABASE_DEV_USER'] %>
   password: <%= ENV['DATABASE_DEV_PASSWORD'] %>
-  host: <%= ENV['DATABASE_DEV_HOST'] %>
+  host: topituku-db.c63j8gwfcxjz.ap-northeast-1.rds.amazonaws.com
