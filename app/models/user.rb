@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :folders, dependent: :destroy
 
   has_many :likes, dependent: :destroy
-  has_many :liked_folders, through: :likes, source: :folder  
+  has_many :liked_folders, through: :likes, source: :folder
 
   validates :name, presence: true
   # validates :email, presence: true

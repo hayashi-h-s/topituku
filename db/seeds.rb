@@ -56,9 +56,7 @@ posts1.each do |elem|
   @folder1.posts.create(content: elem)
 end
 
-
-
-#user２人目
+#user２人目 恋バナ次郎
 
 @user2 = User.create!(name:  "恋バナ次郎",
                      email: "topituku2@test.com",
@@ -96,27 +94,27 @@ posts2.each do |elem|
   @folder2.posts.create(content: elem)
 end
 
+#user３人目罰ゲーム三郎
+
 @user3 = User.create!(name:  "罰ゲーム三郎",
                      email: "topituku3@test.com",
                      password:              "topituku3",
                      password_confirmation: "topituku3",
                      )
 
-#user３人目
+# @folder3 = @user3.folders.create!(title: "罰ゲーム集")
 
-@folder3 = @user3.folders.create!(title: "罰ゲーム集")
+# @folder4 = @user3.folders.create!(title: "深い話")
 
-@folder4 = @user3.folders.create!(title: "深い話")
+# @folder5 = @user3.folders.create!(title: "趣味の話")
 
-@folder5 = @user3.folders.create!(title: "趣味の話")
+# @folder6 = @user3.folders.create!(title: "学生時代の話")
 
-@folder6 = @user3.folders.create!(title: "学生時代の話")
+# @folder7 = @user3.folders.create!(title: "初対面での話題")
 
-@folder7 = @user3.folders.create!(title: "初対面での話題")
+# @folder8 = @user3.folders.create!(title: "究極の２択")
 
-@folder8 = @user3.folders.create!(title: "究極の２択")
-
-@folder9 = @user3.folders.create!(title: "就活の面接で問われる話題")
+# @folder9 = @user3.folders.create!(title: "就活の面接で問われる話題")
 
 
 
