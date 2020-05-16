@@ -51,10 +51,10 @@ class FoldersController < ApplicationController
 
   def show
     @folder = Folder.find(params[:id])
-    @posts = @folder.posts.all
-    @posts_count = @posts.size
+    
+    # @posts = @folder.posts.all
+    # @posts_count = @posts.size
     @random = @folder.posts.order("RAND()").limit(1)
-    @like = Like.new
   end  
 
   private
