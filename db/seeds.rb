@@ -172,7 +172,6 @@ posts6.each do |elem|
   @folder6.posts.create(content: elem)
 end
 
-
 # 深井 七郎
 
 @user7 = User.create!(name:  "深井 七郎",
@@ -194,8 +193,6 @@ posts7 = [
 posts7.each do |elem|
   @folder7.posts.create(content: elem)
 end
-
-
 
 # トピつく太郎 ２つ目のフォルダ
 
