@@ -1,9 +1,32 @@
-#user１人目
+# データ追加テンプレート
 
-@user1 = User.create!(name:  "トピつく太郎",
+# @user1 = User.create!(name:  "",
+#                      email: "topituku@test.com",
+#                      password:              "topituku",
+#                      password_confirmation: "topituku",
+#                      )
+
+# @folder1 = @user1.folders.create!(title: "")
+
+# posts1 = [
+#   "",
+#   "",
+#   "",
+#   "",
+#   "",
+# ]
+
+# posts1.each do |elem|
+#   @folder1.posts.create(content: elem)
+# end
+
+# トピつく 太郎
+
+@user1 = User.create!(name:  "トピつく 太郎",
                      email: "topituku@test.com",
                      password:              "topituku",
                      password_confirmation: "topituku",
+                     avatar: File.open("./app/assets/images/man_nomal.png")
                      )
 
 @folder1 = @user1.folders.create!(title: "盛り上がる話題集")
@@ -56,9 +79,9 @@ posts1.each do |elem|
   @folder1.posts.create(content: elem)
 end
 
-#user２人目 恋バナ次郎
+# 恋バナ次郎
 
-@user2 = User.create!(name:  "恋バナ次郎",
+@user2 = User.create!(name:  "恋バナ 次郎",
                      email: "topituku2@test.com",
                      password:              "topituku2",
                      password_confirmation: "topituku2",                
@@ -94,32 +117,115 @@ posts2.each do |elem|
   @folder2.posts.create(content: elem)
 end
 
-#user３人目罰ゲーム三郎
+# 暇つぶし三郎
 
-@user3 = User.create!(name:  "罰ゲーム三郎",
+@user3 = User.create!(name:  "暇つぶし 三郎",
                      email: "topituku3@test.com",
                      password:              "topituku3",
                      password_confirmation: "topituku3",
                      )
 
-# @folder3 = @user3.folders.create!(title: "罰ゲーム集")
+@folder3 = @user3.folders.create!(title: "暇つぶし話題集")
 
-# @folder4 = @user3.folders.create!(title: "深い話")
+posts3 = [
+  "何か１つ無人島に持っていけるならどうする？",
+  "１億円あったらどうする？",
+  "１ヶ月の休暇があったら何する？",
+  "明日死ぬなら何する？",
+  "最近見た夢",
+]
 
-# @folder5 = @user3.folders.create!(title: "趣味の話")
+posts3.each do |elem|
+  @folder3.posts.create(content: elem)
+end
 
-# @folder6 = @user3.folders.create!(title: "学生時代の話")
+# 初対面 四郎
 
-# @folder7 = @user3.folders.create!(title: "初対面での話題")
+@user4 = User.create!(name:  "初対面 四郎",
+                     email: "topituku4@test.com",
+                     password:              "topituku4",
+                     password_confirmation: "topituku4",
+                     )
 
-# @folder8 = @user3.folders.create!(title: "究極の２択")
+@folder4 = @user4.folders.create!(title: "初対面での話題集")
 
-# @folder9 = @user3.folders.create!(title: "就活の面接で問われる話題")
+posts4 = [
+  "自分の性格を一言で",
+  "最近パッピーだったこと",
+  "家族構成",
+  "恋人はいる？",
+  "誕生日",
+]
+
+posts4.each do |elem|
+  @folder1.posts.create(content: elem)
+end
+
+# 二択 吾郎
+
+@user5 = User.create!(name:  "二択 吾郎",
+                     email: "topituku5@test.com",
+                     password:              "topituku5",
+                     password_confirmation: "topituku5",
+                     )
+
+@folder5 = @user5.folders.create!(title: "究極の二択")
+
+posts5 = [
+  "年中夏 or 年中冬",
+  "異性と付き合うなら 顔 or 性格",
+  "スポーツの才能 or 芸術の才能",
+  "死ぬ年齢を知る or 死に方を知る",
+  "時間にルーズな恋人 or お金にルーズな恋人",
+]
+
+posts5.each do |elem|
+  @folder5.posts.create(content: elem)
+end
 
 
+# 罰ゲーム 六郎
+
+@user6 = User.create!(name:  "罰ゲーム 六郎",
+                     email: "topituku6@test.com",
+                     password:              "topituku6",
+                     password_confirmation: "topituku6",
+                     )
+
+@folder6 = @user6.folders.create!(title: "罰ゲーム集")
+
+posts6 = [
+  "モノマネ",
+  "一発ギャグ",
+  "すべらない話",
+  "セクシーポーズ",
+  "尻文字",
+  "変顔",
+]
+
+posts6.each do |elem|
+  @folder6.posts.create(content: elem)
+end
 
 
+# 深井 七郎
 
+@user7 = User.create!(name:  "深井 七郎",
+                     email: "topituku7@test.com",
+                     password:              "topituku7",
+                     password_confirmation: "topituku7",
+                     )
 
+@folder7 = @user7.folders.create!(title: "深い話")
 
+posts7 = [
+  "座右の銘",
+  "どんな人生の最後を迎えたい？",
+  "お世話になった人は？",
+  "１０代の自分への助言",
+  "子供ができたらどう育てたい？",
+]
 
+posts7.each do |elem|
+  @folder7.posts.create(content: elem)
+end

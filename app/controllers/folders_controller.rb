@@ -6,7 +6,7 @@ class FoldersController < ApplicationController
 
   def index
     # @folders = Folder.all.order(created_at: :desc)
-    @folders = Folder.order(created_at: :desc).all.page(params[:page]).per(7)
+    @folders = Folder.order(created_at: :desc).all.page(params[:page]).per(6)
   end
 
   def new
