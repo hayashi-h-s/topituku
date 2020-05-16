@@ -21,13 +21,13 @@
                 </span>
                 <%= link_to "","/game/#{folder.id}",class: "fas fa-gamepad fa-2x fa-fw mr-2 ml-3" %>
                 <%= link_to "",folder_posts_path(folder),class: "fas fa-folder-open fa-2x fa-fw mr-1" %>        
+                <%= link_to "トピック投稿",new_folder_post_path(folder) %>
                 <% if folder.user == current_user %>
                   <ul class="dropdwn">
                     <li ><span class="fas fa-caret-square-down fa-2x fa-fw"></span>           
                       <ul class="dropdwn_menu">
                         <% if folder.user == current_user %>
-                          <li><%= link_to "フォルダ名編集",edit_folder_path(folder) %></li> 
-                          <li><%= link_to "トピック投稿",new_folder_post_path(folder) %></li> 
+                          <li><%= link_to "フォルダ名編集",edit_folder_path(folder) %></li>                           
                           <li><%= link_to "フォルダ削除", folder_path(folder), method: :delete %></li>
                         <% end %>
                       </ul>
