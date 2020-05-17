@@ -86,6 +86,6 @@ production:
   reconnect: false
   database: random_talking_production
   pool: 5
-  username: <%= ENV['DATABASE_DEV_USER'] %>
-  password: <%= ENV['DATABASE_DEV_PASSWORD'] %>
-  host: topituku-db.c63j8gwfcxjz.ap-northeast-1.rds.amazonaws.com
+  username: root
+  password: "@Max9173627"
+  host: localhost
