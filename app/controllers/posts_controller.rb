@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  # before_action :correct_user, only: [:new, :create, :destroy]
+  before_action :correct_user, only: [:new, :create, :destroy]
 
   def index
     @folder = Folder.find(params[:folder_id])
