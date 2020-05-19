@@ -39,13 +39,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
-    prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
+    if resource.respond_to?(:unconfirmed_email)
+      prev_unconfirmed_email = resource.unconfirmed_email
+    end
 
     resource_updated = update_resource(resource, account_update_params)
     yield resource if block_given?
     if resource_updated
       set_flash_message_for_update(resource, prev_unconfirmed_email)
-      bypass_sign_in resource, scope: resource_name if sign_in_after_change_password?
+      if sign_in_after_change_password?
+        bypass_sign_in resource, scope: resource_name
+      end
       redirect_to user_path(resource)
     else
       clean_up_passwords resource
@@ -53,7 +57,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       respond_with resource
     end
   end
-
 
   # DELETE /resource
   # def destroy

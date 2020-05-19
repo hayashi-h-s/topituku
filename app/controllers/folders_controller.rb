@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class FoldersController < ApplicationController
-  before_action :logged_in_user ,only: [:new, :create, :destroy]
+  before_action :logged_in_user, only: %i[new create destroy]
   before_action :correct_user, only: [:edit]
   # before_action :user_signed_in?, only: [:new, :create, :destroy]
   # before_action :correct_user,   only: [:edit, :update]
@@ -19,7 +21,7 @@ class FoldersController < ApplicationController
       flash[:notice] = "「#{@folder.title}」を投稿しました"
       redirect_to new_folder_post_path(@folder)
     else
-      flash[:alert] = "フォルダ名を入力してください"
+      flash[:alert] = 'フォルダ名を入力してください'
       redirect_to new_folder_path(@folder)
     end
   end
@@ -32,7 +34,7 @@ class FoldersController < ApplicationController
   end
 
   def edit
-    @folder = Folder.find(params[:id]) 
+    @folder = Folder.find(params[:id])
   end
 
   def update
@@ -43,7 +45,7 @@ class FoldersController < ApplicationController
     else
       render 'edit'
     end
-  end  
+  end
 
   def game
     @folder = Folder.find(params[:id])
@@ -51,16 +53,15 @@ class FoldersController < ApplicationController
 
   def show
     @folder = Folder.find(params[:id])
-    
+
     # @posts = @folder.posts.all
     # @posts_count = @posts.size
-    @random = @folder.posts.order("RAND()").limit(1)
-  end  
+    @random = @folder.posts.order('RAND()').limit(1)
+  end
 
   private
 
-    def folder_params
-      params.require(:folder).permit(:title)
-    end
-
+  def folder_params
+    params.require(:folder).permit(:title)
+  end
 end

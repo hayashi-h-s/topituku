@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
@@ -17,15 +19,15 @@ CarrierWave.configure do |config|
     # when 'production'
     #   config.fog_directory  = 'topituku'
     #   config.cache_storage = :fog
-    when 'development'
-      config.fog_public = false
-      config.fog_directory  = 'dev.topituku'
-      config.cache_storage = :fog
+  when 'development'
+    config.fog_public = false
+    config.fog_directory = 'dev.topituku'
+    config.cache_storage = :fog
 
-    when 'test'
-      config.fog_directory = 'test.dummy'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/test.dummy'
-  end  
+  when 'test'
+    config.fog_directory = 'test.dummy'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/test.dummy'
+  end
 end
 
 if Rails.env.production?
@@ -37,10 +39,10 @@ if Rails.env.production?
       provider: 'AWS',
       region: 'ap-northeast-1',
       aws_access_key_id: Rails.application.credentials.aws[:access_key_id],
-      aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],
+      aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key]
     }
     config.fog_directory = 'topituku'
-    config.asset_host = 'https://topituku.s3.amazonaws.com' 
+    config.asset_host = 'https://topituku.s3.amazonaws.com'
   end
 
   # 日本語ファイル名の設定

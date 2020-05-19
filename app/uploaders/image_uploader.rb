@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -7,39 +9,40 @@ class ImageUploader < CarrierWave::Uploader::Base
   # storage :file
   # storage :fog
   # リサイズしたり画像形式を変更するのに必要
-    include CarrierWave::RMagick
+  include CarrierWave::RMagick
 
   # 画像の上限を640x480にする
-    # process :resize_to_limit => [640, 480]
+  # process :resize_to_limit => [640, 480]
 
   if Rails.env.development?
-      storage :fog
+    storage :fog
   elsif Rails.env.test?
-      storage :file
+    storage :file
   else
-      storage :fog
-  end  
+    storage :fog
+  end
 
   # Override the directory where uploaded files will be stored.
-  
+
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-      "uploads/#{model.class.to_s.underscore}"
+    "uploads/#{model.class.to_s.underscore}"
   end
 
   def extension_whitelist
-      %w(png jpg)
-  end  
+    %w[png jpg]
+  end
 
   def filename
-      "#{secure_token}.#{file.extension}" if original_filename.present?
-  end  
-  
+    "#{secure_token}.#{file.extension}" if original_filename.present?
+  end
+
   protected
-    def secure_token
-        var = :"@#{mounted_as}_secure_token"
-    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
-    end  
+
+  def secure_token
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) || model.instance_variable_set(var, SecureRandom.uuid)
+  end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)

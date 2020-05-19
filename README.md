@@ -24,6 +24,7 @@ http://www.topituku.xyz/users/sign_in
 * ページネーション機能(kaminari)
 * 環境変数のセキュリティ管理(dotenv-rails)
 * レスポンシブデザイン（スマホサイズに対応）
+* Rubyのコーディング規約に準拠してるかをチェック(Rubocop)
 
 # 使用技術
  

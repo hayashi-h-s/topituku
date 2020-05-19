@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -16,6 +18,6 @@ class User < ApplicationRecord
   mount_uploader :avatar, ImageUploader
 
   def already_liked?(folder)
-    self.likes.exists?(folder_id: folder.id)
+    likes.exists?(folder_id: folder.id)
   end
 end

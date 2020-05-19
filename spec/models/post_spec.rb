@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 # RSpec.feature 'フォルダが表示機能' do

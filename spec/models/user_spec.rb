@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 # 参考
 # nameを一意にする
-#nameの長さを調整
+# nameの長さを調整
 # https://github.com/TadayoshiOtsuka/NateMate/blob/master/spec/models/user_spec.rb
 
 RSpec.describe User, type: :model do
@@ -18,7 +20,7 @@ RSpec.describe User, type: :model do
   #   @user.name = nil
   #   @user.valid?
   #   expect(@user.errors).to be_added(:blank)
-  # end  
+  # end
 
   # it 'nameが空白のユーザーを許可しない' do
   #   @user.name = '   '
@@ -30,7 +32,7 @@ RSpec.describe User, type: :model do
     @user.email = nil
     @user.valid?
     expect(@user.errors).to be_added(:email, :blank)
-  end  
+  end
 
   it 'passwordが存在しないユーザーを許可しない' do
     @user.password = @user.password_confirmation = ' ' * 6
@@ -40,7 +42,7 @@ RSpec.describe User, type: :model do
 
   it 'emailが空では登録できないこと' do
     user = build(:user, email: nil)
-    user.valid? #有効か？
+    user.valid? # 有効か？
     # expect(user.errors[:email]).to include('入力してください')
   end
 
@@ -49,18 +51,18 @@ RSpec.describe User, type: :model do
     @user.password_confirmation = 'aaaaaaaa'
     @user.valid?
     expect(@user.errors).to be_added(:password_confirmation, :confirmation, attribute: 'パスワード')
-  end  
+  end
 
   it 'passwordが6文字未満のユーザーを許可しない' do
     @user.password = 'a' * 5
     @user.valid?
     expect(@user.errors).to be_added(:password, :too_short, count: 6)
-  end  
+  end
 
   it 'passwordが６文字以上のユーザーを許可する' do
     @user.password = @user.password_confirmation = 'a' * 6
     expect(@user).to be_valid
-  end  
+  end
 
   # it 'nameが一意でないユーザーを許可しない' do
   #   user  = create(:user, name: 'sample')
@@ -72,6 +74,5 @@ RSpec.describe User, type: :model do
     @user.email = 'SAMPLE@SAMPLE.JP'
     @user.save!
     expect(@user.reload.email).to eq 'sample@sample.jp'
-  end  
-
+  end
 end

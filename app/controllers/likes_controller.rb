@@ -1,5 +1,6 @@
-class LikesController < ApplicationController
+# frozen_string_literal: true
 
+class LikesController < ApplicationController
   def create
     # @folder = Folder.find(params[folder_id])
     @like = current_user.likes.build(folder_id: params[:folder_id])
@@ -16,5 +17,5 @@ class LikesController < ApplicationController
     @like.destroy
     redirect_back(fallback_location: root_path)
     # ridirect_to root_path
-  end    
+  end
 end
