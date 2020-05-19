@@ -1,6 +1,7 @@
-class PostsController < ApplicationController
+# frozen_string_literal: true
 
-  before_action :correct_user, only: [:new, :create, :destroy]
+class PostsController < ApplicationController
+  before_action :correct_user, only: %i[new create destroy]
 
   def index
     @folder = Folder.find(params[:folder_id])
@@ -20,10 +21,10 @@ class PostsController < ApplicationController
       redirect_back(fallback_location: new_folder_post_path)
       flash[:notice] = "「#{@post.content}」を投稿しました"
     else
-      render "new"
+      render 'new'
     end
   end
-  
+
   def destroy
     @folder = Folder.find(params[:folder_id])
     @post = @folder.posts.find(params[:id])
@@ -31,14 +32,11 @@ class PostsController < ApplicationController
     redirect_back fallback_location: new_folder_post_path, notice: "トピック「#{@post.content}」を削除しました"
   end
 
-  def edit  
-    
-  end
+  def edit; end
 
   private
 
-    def post_params
-      params.require(:post).permit(:content)
-    end
-
+  def post_params
+    params.require(:post).permit(:content)
+  end
 end

@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'フォルダが表示機能' do
-
   background do
     # ユーザを作成する
     @user = User.create!(email: 'foo@example.com', password: '123456')
     @folder = @user.folders.create!(title: 'フォルダ')
     # let(:folder) { create(:folder) }
     # user_a = FactoryBot.create(:user, name: 'ユーザーA', email: 'a@example.com')
-    # FactoryBot.create(:folder, title: 'フォルダ', user: user_a)    
+    # FactoryBot.create(:folder, title: 'フォルダ', user: user_a)
   end
 
   scenario '@userが作成したフォルダが表示される' do
