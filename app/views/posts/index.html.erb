@@ -1,25 +1,16 @@
 
-<% 
-=begin
-%>
-
-あとで機能を追加する
-フォルダ名:<%= @folder.title %>
-<%= form_with model:[@folder, @folder.posts.build],local:true,class: "form-inline" do |f| %>
-  <%= f.text_field:content,placeholder: "トピックを入力",class: "form-control w-75" %>
-  <%= f.submit "投稿",class: "btn btn-primary submit-btn" %>
-<% end %>
-
-<%= link_to "ゲーム開始！",folder_path(@folder), class:"btn btn-info btn-lg game-btn" %>
-
-<%
-=end
-%>
 
 <%= render partial: 'users/user_icon', locals: { user: @folder.user } %>      
+<div class="text-center mt-4">
+  <%= form_with model:[@folder, @folder.posts.build],local:true do |f| %>
+    <%= f.text_field:content, placeholder: "トピックを追加", class: "w-50 form-label-group form" %>
+    <%= f.submit "投稿", class: "btn btn-primary submit-btn" %>
+  <% end %>
+  <%= link_to "ゲーム開始！","/game/#{@folder.id}", class: "btn btn-info btn-lg game-btn" %>
+</div>
 
 <div class="text-center">
-  <p class="lead mt-3">「<%= @folder.title %>」のトピック一覧<%= link_to "",new_folder_post_path(@folder),class: "far fa-plus-square fa-2x fa-fw ml-3" if @folder.user == current_user %></p>
+  <p class="lead mt-4 mb-4">「<%= @folder.title %>」のトピック一覧</p>
 </div>
 
 <% if @posts.blank? %>
