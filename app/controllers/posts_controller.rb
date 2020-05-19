@@ -21,7 +21,7 @@ class PostsController < ApplicationController
       redirect_back(fallback_location: new_folder_post_path)
       flash[:notice] = "「#{@post.content}」を投稿しました"
     else
-      render 'new'
+      redirect_back(fallback_location: new_folder_post_path)
     end
   end
 
@@ -31,8 +31,6 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_back fallback_location: new_folder_post_path, notice: "トピック「#{@post.content}」を削除しました"
   end
-
-  def edit; end
 
   private
 

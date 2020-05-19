@@ -1,5 +1,4 @@
 
-
 <%= render partial: 'users/user_icon', locals: { user: @folder.user } %>      
 <div class="text-center mt-4">
   <%= form_with model:[@folder, @folder.posts.build],local:true do |f| %>

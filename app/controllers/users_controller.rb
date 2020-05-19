@@ -6,6 +6,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @folders = @user.folders.all.page(params[:page]).per(2)
+    @folders = @user.folders.all.page(params[:page]).per(6)
   end
 end
