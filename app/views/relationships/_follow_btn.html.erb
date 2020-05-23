@@ -1,7 +1,7 @@
 <% if user_signed_in? && current_user != user %>
   <% if user.followed_by?(current_user) %>
-    <%=link_to "フォロー中", user_relationships_path(user.id), method: :delete, class:"btn btn-primary mt-2 btn-top rounded-pill" %>
+    <%=link_to "フォロー中", user_relationships_path(user.id), method: :delete, class:"btn btn-primary mt-2 btn-top rounded-pill",remote: true %>
   <% else %>
-    <%=link_to "フォロー", user_relationships_path(user.id), method: :post ,class:"btn btn-outline-primary mt-2 btn-top rounded-pill" %>
+    <%=link_to "フォロー", user_relationships_path(user.id), method: :post ,class:"btn btn-outline-primary mt-2 btn-top rounded-pill",remote: true %>
   <% end %>
 <% end %>

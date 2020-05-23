@@ -12,7 +12,7 @@
   </div>
 </div>
 <div class="text-center">
-  <div class="mb-3"><%= render partial: 'relationships/follow_btn', locals: { user: user } %></div>
+  <div class="mb-3" id="follow_ajax_<% user.id %>"><%= render partial: 'relationships/follow_btn', locals: { user: user } %></div>
   <span class="mr-3 under-line"><%= link_to "#{@follow_count}：フォロー中", follows_user_path(user) %></span>
   <span class="under-line"><%= link_to "#{@follower_count}：フォロワー", follows_user_path(user) %></span>
 </div>
