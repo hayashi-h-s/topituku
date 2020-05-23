@@ -1,13 +1,19 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
 
   root 'home#top'
-  resources :users, only: [:show]
+
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+    get :follows, on: :member 
+    get :followers, on: :member 
+  end  
 
   get 'game/:id' => 'folders#game'
 

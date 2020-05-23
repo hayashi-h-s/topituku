@@ -1,0 +1,9 @@
+{
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "emmet.triggerExpansionOnTab": true,
+    "workbench.editor.enablePreview": false,
+    "editor.tabSize": 2,
+    "editor.minimap.enabled": false,
+    "editor.hover.enabled": false
+}

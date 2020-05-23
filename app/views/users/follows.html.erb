@@ -1,0 +1,78 @@
+<script>
+jQuery(function($){
+	$('.tab').click(function(){
+		$('.is-active').removeClass('is-active');
+		$(this).addClass('is-active');
+		$('.is-show').removeClass('is-show');
+        // クリックしたタブからインデックス番号を取得
+		const index = $(this).index();
+        // クリックしたタブと同じインデックス番号をもつコンテンツを表示
+		$('.panel').eq(index).addClass('is-show');
+	});
+});
+</script>
+
+<%= render partial: 'users/user_icon', locals: { user: @user } %>
+
+<ul class="tab-group mt-3" style="width: 90%;">
+  <li class="tab is-active">フォロー中</li>
+  <li class="tab">フォロワー</li>
+</ul>
+
+<div class="panel-group mx-auto" style="width: 90%;">
+  <div class="panel is-show">
+    <% if @follow_list.blank? %>
+        <div class="card mx-auto">
+          <div class="card-body text-center">
+            まだ誰もフォローしていません。
+          </div>
+        </div>
+    <% else %>
+      <% @follow_list.each do |follow| %>
+        <%#= render partial: 'index', locals: { user: follow } %>
+        <div class="card mx-auto">
+          <div class="card-body">
+            <span class="card-title">
+              <% if follow.avatar? %>
+                <%= link_to (image_tag follow.avatar.to_s, class:"icon"), user_path(follow) %>
+              <% else %>
+                <%= link_to image_tag('https://topituku.s3-ap-northeast-1.amazonaws.com/default_user_image.jpg', class:"icon"), user_path(follow) %>
+              <% end %>
+              <%= link_to follow.name, user_path(follow) %>
+            </span>
+            <span class="float-right">
+              <%= render partial: 'relationships/follow_btn', locals: { user: follow } %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="panel">
+    <% if @follower_list.blank? %>
+      <div class="card mx-auto">
+        <div class="card-body text-center">
+          まだフォロワーはいません。
+        </div>
+      </div>    
+    <% else %>
+      <% @follower_list.each do |follower| %>
+        <div class="card mx-auto">
+          <div class="card-body">
+            <span class="card-title">
+              <% if follower.avatar? %>
+                <%= link_to (image_tag follower.avatar.to_s, class:"icon"), user_path(follower) %>
+              <% else %>
+                <%= link_to image_tag('https://topituku.s3-ap-northeast-1.amazonaws.com/default_user_image.jpg', class:"icon"), user_path(follower) %>
+              <% end %>
+              <%= link_to follower.name, user_path(follower) %>
+            </span>
+            <span class="float-right">
+              <%= render partial: 'relationships/follow_btn', locals: { user: follower } %>
+            </span>            
+          </div>
+        </div>
+      <% end %>   			
+    <% end %>
+  </div>
+</div>
