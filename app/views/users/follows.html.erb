@@ -29,22 +29,7 @@ jQuery(function($){
         </div>
     <% else %>
       <% @follow_list.each do |follow| %>
-        <%#= render partial: 'index', locals: { user: follow } %>
-        <div class="card mx-auto">
-          <div class="card-body">
-            <span class="card-title">
-              <% if follow.avatar? %>
-                <%= link_to (image_tag follow.avatar.to_s, class:"icon"), user_path(follow) %>
-              <% else %>
-                <%= link_to image_tag('https://topituku.s3-ap-northeast-1.amazonaws.com/default_user_image.jpg', class:"icon"), user_path(follow) %>
-              <% end %>
-              <%= link_to follow.name, user_path(follow) %>
-            </span>
-            <span class="float-right">
-              <%= render partial: 'relationships/follow_btn', locals: { user: follow } %>
-            </span>
-          </div>
-        </div>
+        <%= render partial: 'index', locals: { user: follow } %>
       <% end %>
     <% end %>
   </div>
@@ -57,21 +42,7 @@ jQuery(function($){
       </div>    
     <% else %>
       <% @follower_list.each do |follower| %>
-        <div class="card mx-auto">
-          <div class="card-body">
-            <span class="card-title">
-              <% if follower.avatar? %>
-                <%= link_to (image_tag follower.avatar.to_s, class:"icon"), user_path(follower) %>
-              <% else %>
-                <%= link_to image_tag('https://topituku.s3-ap-northeast-1.amazonaws.com/default_user_image.jpg', class:"icon"), user_path(follower) %>
-              <% end %>
-              <%= link_to follower.name, user_path(follower) %>
-            </span>
-            <span class="float-right">
-              <%= render partial: 'relationships/follow_btn', locals: { user: follower } %>
-            </span>            
-          </div>
-        </div>
+        <%= render partial: 'index', locals: { user: follower } %>
       <% end %>   			
     <% end %>
   </div>

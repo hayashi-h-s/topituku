@@ -1,0 +1,15 @@
+<div class="card mx-auto">
+  <div class="card-body">
+    <span class="card-title">
+      <% if user.avatar? %>
+        <%= link_to (image_tag user.avatar.to_s, class:"icon"), user_path(user) %>
+      <% else %>
+        <%= link_to image_tag('https://topituku.s3-ap-northeast-1.amazonaws.com/default_user_image.jpg', class:"icon"), user_path(user) %>
+      <% end %>
+      <%= link_to user.name, user_path(user) %>
+    </span>
+    <span class="float-right">
+      <%= render partial: 'relationships/follow_btn', locals: { user: user } %>
+    </span>
+  </div>
+</div>
