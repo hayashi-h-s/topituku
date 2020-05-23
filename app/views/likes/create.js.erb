@@ -1,1 +1,1 @@
-$('#likes_buttons').html("<%= j(render partial: 'likes/like', locals: {folder: folder}) %>");
+$('#likes_buttons_<%= @folder.id %>').html("<%= j(render partial: 'likes/like', locals: {folder: @folder}) %>");
