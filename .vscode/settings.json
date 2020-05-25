@@ -6,4 +6,5 @@
     "editor.tabSize": 2,
     "editor.minimap.enabled": false,
     "editor.hover.enabled": false
+    "editor.insertSpaces": true // デフォルト設定なのでなくてもOK
 }

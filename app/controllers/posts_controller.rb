@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   def index
     @folder = Folder.find(params[:folder_id])
     @posts = @folder.posts.all.order(created_at: :desc)
-    # .order("RAND()").limit(1000) ランダムに表示できる
     @follow_count = @folder.user.followings.count
     @follower_count = @folder.user.followers.count
   end
@@ -31,7 +30,7 @@ class PostsController < ApplicationController
     @folder = Folder.find(params[:folder_id])
     @post = @folder.posts.find(params[:id])
     @post.destroy
-    redirect_back fallback_location: new_folder_post_path, notice: "トピック「#{@post.content}」を削除しました"
+    # redirect_back fallback_location: new_folder_post_path, notice: "トピック「#{@post.content}」を削除しました"
   end
 
   private
