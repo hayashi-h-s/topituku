@@ -6,8 +6,6 @@ class PostsController < ApplicationController
   def index
     @folder = Folder.find(params[:folder_id])
     @posts = @folder.posts.all.order(created_at: :desc)
-    @follow_count = @folder.user.followings.count
-    @follower_count = @folder.user.followers.count
   end
 
   def new

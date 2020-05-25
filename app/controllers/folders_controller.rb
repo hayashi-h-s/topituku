@@ -1,13 +1,8 @@
-# frozen_string_literal: true
-
 class FoldersController < ApplicationController
   before_action :logged_in_user, only: %i[new create destroy]
   before_action :correct_user, only: [:edit]
-  # before_action :user_signed_in?, only: [:new, :create, :destroy]
-  # before_action :correct_user,   only: [:edit, :update]
 
   def index
-    # @folders = Folder.all.order(created_at: :desc)
     @folders = Folder.order(created_at: :desc).all.page(params[:page]).per(6)
   end
 
@@ -53,9 +48,6 @@ class FoldersController < ApplicationController
 
   def show
     @folder = Folder.find(params[:id])
-
-    # @posts = @folder.posts.all
-    # @posts_count = @posts.size
     @random = @folder.posts.order('RAND()').limit(1)
   end
 
