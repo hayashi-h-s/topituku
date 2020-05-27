@@ -4,7 +4,7 @@
 			<span class="card-title"><%= post.content %></span>
 			<div class="float-right">
 				<% if @folder.user == current_user %>
-					<%= link_to "",folder_post_path(@folder,post), method: :delete,class: "fas fa-trash-alt fa-2x fa-fw", remote: true %>
+					<%= link_to "",folder_post_path(@folder,post), method: :delete,class: "fas fa-trash-alt fa-2x fa-fw" %>
 				<% end %>
 			</div>
 		</div>

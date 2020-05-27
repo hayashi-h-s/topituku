@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = @folder.posts.build(post_params)
     if @post.save
       redirect_back(fallback_location: new_folder_post_path)
-      flash[:notice] = "「#{@post.content}」を投稿しました"
+      flash[:notice] = "「#{@post.content}」を投稿しました。"
     else
       redirect_back(fallback_location: new_folder_post_path)
     end
@@ -28,7 +28,8 @@ class PostsController < ApplicationController
     @folder = Folder.find(params[:folder_id])
     @post = @folder.posts.find(params[:id])
     @post.destroy
-    # redirect_back fallback_location: new_folder_post_path, notice: "トピック「#{@post.content}」を削除しました"
+    flash[:notice] = "トピック「#{@post.content}」を削除しました。"
+    redirect_back(fallback_location: new_folder_post_path(@folder.user))
   end
 
   private
