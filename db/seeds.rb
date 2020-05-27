@@ -27,11 +27,10 @@
 @user1 = User.create!(name: 'トピつく 太郎',
                       email: 'topituku@test.com',
                       password: 'topituku',
-                      password_confirmation: 'topituku')
+                      password_confirmation: 'topituku'
+                      )
 
 @folder1 = @user1.folders.create!(title: '学校に関する話題')
-
-@like = @user1.likes.create!(folder_id: @folder1.id)
 
 posts1 = [
   '昔は学校ではやった遊びは？',
@@ -238,4 +237,42 @@ posts8 = [
 
 posts8.each do |elem|
   @folder8.posts.create(content: elem)
+end
+
+# フォロー
+
+#トピつく太郎のフォロー
+
+5.times do |n|
+  @user1.active_relationships.create!(
+    following_id: @user1 ,
+    follower_id:  n + 2
+  )
+end
+
+# 恋バナ二郎のフォロー
+
+5.times do |n|
+  @user2.active_relationships.create!(
+    following_id: @user2 ,
+    follower_id:  n + 1
+  )
+end
+
+# 暇つぶし三郎のフォロー
+
+5.times do |n|
+  @user3.active_relationships.create!(
+    following_id: @user3 ,
+    follower_id:  n + 1
+  )
+end
+
+# いいね
+
+5.times do |n|
+  @user1.likes.create!(
+    folder_id: @folder1.id + n ,
+    user_id: 1
+  )
 end
