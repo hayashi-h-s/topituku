@@ -15,4 +15,6 @@
   <div id="follow_ajax_<% user.id %>">
     <%= render partial: 'relationships/follow_btn', locals: { user: user } %>
   </div>
+  <span class="mr-3 under-line"><%= link_to "#{user.followings.count}：フォロー中", follows_user_path(user) %></span>
+  <span class="mr-3 under-line"><%= link_to "#{user.followers.count}：フォロー中", follows_user_path(user) %></span>
 </div>

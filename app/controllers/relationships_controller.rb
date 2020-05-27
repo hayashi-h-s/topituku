@@ -4,6 +4,7 @@ class RelationshipsController < ApplicationController
     @user = User.find(params[:user_id])
     @follow_count = @user.followings.count
     @follow.save
+    redirect_back(fallback_location: user_path(@user))
   end
 
   def destroy
@@ -11,5 +12,6 @@ class RelationshipsController < ApplicationController
     @user = User.find(params[:user_id])
     @follower_count = @user.followers.count
     @follow.destroy
+    redirect_back(fallback_location: user_path(@user))
   end
 end

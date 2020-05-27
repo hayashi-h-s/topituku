@@ -12,7 +12,7 @@ jQuery(function($){
 });
 </script>
 
-<%= render partial: 'user_icon', locals: { user: @user } %>      
+<%= render partial: 'user_icon', locals: { user: @user } %>
 
 <ul class="tab-group mt-3" style="width: 90%;">
   <li class="tab is-active">フォルダ</li>
@@ -27,7 +27,7 @@ jQuery(function($){
           </div>
         </div>
     <% else %>
-      <%= render partial: 'folders/listfolder', locals: { folders: @folders} %>    
+      <%= render partial: 'folders/listfolder', locals: { folders: @folders} %>
     <% end %>
   </div>
   <div class="panel">
@@ -36,9 +36,9 @@ jQuery(function($){
         <div class="card-body text-center">
           いいねをした投稿がありません。
         </div>
-      </div>    
+      </div>
     <% else %>
-      <%= render partial: 'folders/listfolder', locals: { folders: @user.liked_folders} %>      
+      <%= render partial: 'folders/listfolder', locals: { folders: @user.liked_folders} %>
     <% end %>
   </div>
 </div>
