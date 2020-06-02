@@ -24,7 +24,7 @@
 }
 
 .container{
-  margin: 40px auto; 
+  margin: 40px auto;
 }
 
 //header
@@ -57,7 +57,7 @@ a{
 }
 
 a:hover {
-text-decoration: none;
+  text-decoration: none;
 }
 
 
@@ -99,21 +99,21 @@ li{
 
 
 /*ページネーション自体のデザイン*/
-.pagination>li>a {          
-  border: none;     
-  color: #696969;  
+.pagination>li>a {
+  border: none;
+  color: #696969;
   // background-color:#DDFFFF;
 }
 
 /* 表示しているページ番号のデザイン */
-.pagination>.active>a {     
-  background:skyblue;     
-  border-radius: 15px;   
+.pagination>.active>a {
+  background:skyblue;
+  border-radius: 15px;
 }
 
 /*ホバー時のデザイン*/
-.pagination>li>a:hover {        
-  border-radius: 15px;   
+.pagination>li>a:hover {
+  border-radius: 15px;
 }
 
 //dropdownのデザイン
@@ -142,7 +142,7 @@ li{
     position: relative;
     // display: block;
     cursor: pointer;
-    z-index: 10;    
+    z-index: 10;
 }
 
 .dropdwn>li{
@@ -172,7 +172,7 @@ li{
 .dropdwn_menu li{
     width: 120px;
     background:white;
-    z-index: 10;         
+    z-index: 10;
 }
 
 .dropdwn_menu li a{
@@ -180,7 +180,7 @@ li{
     margin: -5px 5px -5px -5px;
     display: block;
     // color: #fff;
-    z-index: 10;         
+    z-index: 10;
 }
 
 li a:hover{
