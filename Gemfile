@@ -73,7 +73,12 @@ gem 'pry-rails'
 gem 'rails-i18n'
 
 gem 'carrierwave'
+
 gem 'devise'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+
 gem 'kaminari'
 
 gem 'fog-aws'
