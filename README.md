@@ -24,8 +24,6 @@ AWS[EC2]にデプロイしていました。
 トピつく太郎のパスワード : topituku  
 https://topituku.herokuapp.com/
 
-3540431874211038
-
 # 実装機能一覧、使用gemなど
  
 * folder投稿機能(CRUD)
