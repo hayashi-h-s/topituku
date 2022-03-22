@@ -22,7 +22,7 @@ AWS[EC2]にデプロイしていました。
 ログインページより、テストユーザー(トピつく太郎)で簡単ログインできます。  
 
 トピつく太郎のパスワード : topituku  
-http://www.topituku.xyz/users/sign_in
+https://topituku.herokuapp.com/
 
 3540431874211038
 
